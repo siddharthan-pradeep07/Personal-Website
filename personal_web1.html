@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Siddharthan - Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #8788E8;
+      color: #222;
+    }
+    header {
+      background: #3e57d9;
+      color: #fff;
+      padding: 32px 0 20px 0;
+      text-align: center;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+      color: #fff;
+    }
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 18px;
+    }
+    .projects-section {
+      margin-top: 40px;
+    }
+    .projects-title {
+      font-size: 2rem;
+      margin-bottom: 18px;
+      color: #232946;
+      font-weight: 500;
+    }
+    .projects-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+    .project-img {
+     width: 100%;
+     height: 250px;
+     object-fit: cover;
+     border-radius: 8px;
+     margin-bottom: 16px;
+     box-shadow: 0 1px 6px rgba(35,41,70,0.10);
+     background: #c44d5f;
+   }
+    .project-card {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px rgba(35,41,70,0.04);
+      flex: 1 1 320px;
+      min-width: 280px;
+      max-width: 350px;
+      padding: 24px 18px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.18s cubic-bezier(.65,-0.19,.36,1.39), box-shadow 0.5s;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      transform: translateY(+1px) scale(1.025);
+      box-shadow: 0 8px 24px rgba(35,41,70,0.12);
+      border: 3.5px solid #3e57d9;
+    }
+    .project-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: #000;
+    }
+    .project-card p {
+      font-size: 1rem;
+      color: #444;
+      flex-grow: 1;
+    }
+    .project-card a {
+      display: inline-block;
+      margin-top: 14px;
+      color: #000;
+      background: #a2b6f5;
+      padding: 8px 15px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.17s;
+    }
+    .project-card a:hover {
+      background: #6788eb;
+      color: #fff
+    }
+    @media (max-width: 800px) {
+      .projects-list {
+        flex-direction: column;
+        gap: 22px;
+        align-items: stretch;
+      }
+      main {
+        margin: 28px auto;
+      }
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeInUp 0.9s forwards;
+    }
+    .fade-in:nth-child(2) { animation-delay: .17s; }
+    .fade-in:nth-child(3) { animation-delay: .34s; }
+    .fade-in:nth-child(4) { animation-delay: .51s; }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><B>Hi, I am Siddharthan</B></h1>
+    <p><B>Passionate about machine learning, programming, Arduino, model rocketry, robotics, and 3D printing. Always exploring new horizons in technology!</B></p>
+  </header>
+  <main>
+    <section class="projects-section">
+      <div class="projects-title">My Recent Projects</div>
+      <div class="projects-list">
+        <div class="project-card fade-in">
+           <img src="printly_home2.png" alt="Screenshot of Project 1" 
+        class="project-img">
+          <h3><B>Printly 3D</B></h3><h5>Date: MAR 2024</h5>
+          <p>A 3d Printing service-based website made using Wix that is easy to use and very interactive.</p>
+          <a href="https://siddharthansp07.wixsite.com/createsometech">Website</a>
+        </div>
+        <div class="project-card fade-in">
+          <img src="IMG_20250126_180313.jpg" alt="Screenshot of Project 2" 
+        class="project-img">
+          <h3><B>Inplace</B></h3><h5>Date: JAN 2025</h5>
+          <p>A small device with a display, joystick, and Arduino Nano used for handling the basic features.</p>
+          <a href="https://youtu.be/LIcebMXgsrs?si=5d0TSSRax1CAOzih">View Video</a>
+        </div>
+        <div class="project-card fade-in">
+          <img src="inconvert.jpg" alt="Screenshot of Project 3" 
+        class="project-img">
+          <h3><B>In-convert</B></h3><h5>Date: AUG 2024</h5>
+          <p>A device that converts sign language to Audible speech and text using Google Teachable Machine. </p>
+          <a href="https://teachablemachine.withgoogle.com">Google TM Link</a>
+        </div>
+        <div class="project-card fade-in">
+          <img src="femto_game_thumbnail.png" alt="Screenshot of Project 4" 
+        class="project-img">
+          <h3><B>Femto-The hen</B></h3><h5>Date: JUN 2025</h5>
+          <p>A platformer game made using "sprig" (JavaScript) based on a Hen named "Femto". The objective of this game is to save the hen from enemies and fire. You must collect the coins and diamonds to help you when you're stuck in fire or with enemies.</p>
+          <a href="https://github.com/hackclub/sprig/pull/3172">GitHub repo.</a>
+        </div>
+        <div class="project-card fade-in">
+          <img src="pweb.jpg" alt="Screenshot of Project 5" 
+        class="project-img">
+          <h3><B>Extroxity</B></h3><h5>Date: JUN 2025</h5>
+          <p>"The LEGO of Robotics" (I call it so.) A connectable mechanism made using servos that are interconnected to form a snake-like pattern </p>
+          <a href=""><I><B>Upcoming!</B></I></a>
+         </div>
+         <div class="project-card fade-in">
+          <img src="bookrobo6.png" alt="Screenshot of Project 5" 
+        class="project-img">
+          <h3><B>The Genesis of robotics</B></h3><h5>Date: FEB 2024</h5>
+          <p>The book written by me called the <B>"GENESIS OF ROBOTICS".</B> A must-read for people curious about robotics!  </p>
+          <a href="https://www.bribooks.com/bookstore/the-genesis-of-robotics">View Book</a>
+        <!-- Add more project cards as needed, or use JS to generate them dynamically! -->
+      </div>
+    </section>
+  </main>
+</body>
+</html>
