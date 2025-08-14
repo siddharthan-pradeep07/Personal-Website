@@ -5,6 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>siddharthan.github.io</title>
   <style>
+    .about-btn {
+       padding: 10px 18px;
+       font-size: 1rem;
+       background-color: #232946;
+       color: #fff;
+       border: none;
+       border-radius: 6px;
+       cursor: pointer;
+       transition: background 0.2s ease;
+       margin-bottom: 20px;
+    }
+    .about-btn:hover {
+  background-color: #394164;
+}
+
+/* Modal overlay */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal box */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  max-width: 790px;
+  position: relative;
+  animation: fadeInModal 0.3s ease;
+}
+
+/* Close icon */
+.modal-content .close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+}
+.modal-content .close:hover {
+  color: #000;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -28,23 +86,24 @@
       color: #fff;
     }
     main {
-      max-width: 1200px;
+      max-width: 7000px;
       margin: 40px auto;
       padding: 0 18px;
     }
     .projects-section {
-      margin-top: 40px;
+      margin-top: 10px;
     }
     .projects-title {
-      font-size: 2rem;
-      margin-bottom: 18px;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      margin-left: 20px;
       color: #232946;
-      font-weight: 500;
+      font-weight: 700;
     }
     .projects-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 28px;
+      gap: 30px;
     }
     .project-img {
      width: 100%;
@@ -60,6 +119,8 @@
       border-radius: 14px;
       box-shadow: 0 2px 16px rgba(35,41,70,0.04);
       flex: 1 1 320px;
+      margin-left: 100px;
+      margin-right: 20px;
       min-width: 280px;
       max-width: 350px;
       padding: 24px 18px 18px 18px;
@@ -69,9 +130,9 @@
       cursor: pointer;
     }
     .project-card:hover {
-      transform: translateY(+1px) scale(1.025);
+      transform: translateY(+1px) scale(1);
       box-shadow: 0 8px 24px rgba(35,41,70,0.12);
-      border: 3.5px solid #3e57d9;
+      border: 1px solid #000;
     }
     .project-card h3 {
       font-size: 1.25rem;
@@ -130,6 +191,18 @@
     <p><B>Passionate about machine learning, programming, Arduino, model rocketry, robotics, and 3D printing. Always exploring new horizons in technology!</B></p>
   </header>
   <main>
+     <section class="about-me-section">
+    <button id="aboutMeBtn" class="about-btn">About Me</button>
+  </section>
+      <!-- Modal -->
+  <div id="aboutMeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>About Me</h2>
+      <p>Hello, <B>I'm Siddharthan, a 14-year-old </B>who likes to create new and awesome things with his 3D printer, Rasppy ( Raspberry pi5), Ardu (Arduino), some unorganised electronics, rocketry and some machine learning.</p>
+    </div>
+  </div>
+</main>
     <section class="projects-section">
       <div class="projects-title">My Recent Projects</div>
       <div class="projects-list">
@@ -155,7 +228,7 @@
           <a href="https://teachablemachine.withgoogle.com">Google TM Link</a>
         </div>
         <div class="project-card fade-in">
-          <img src="femto11.png" alt="Screenshot of Project 4" 
+          <img src="femto_game_thumbnail.png" alt="Screenshot of Project 4" 
         class="project-img">
           <h3><B>Femto-The hen</B></h3><h5>Date: JUN 2025</h5>
           <p>A platformer game made using "sprig" (JavaScript) based on a Hen named "Femto". The objective of this game is to save the hen from enemies and fire. You must collect the coins and diamonds to help you when you're stuck in fire or with enemies.</p>
@@ -176,10 +249,31 @@
           <a href="https://www.bribooks.com/bookstore/the-genesis-of-robotics">View Book</a>
         <!-- Add more project cards as needed, or use JS to generate them dynamically! -->
       </div>
+        <div class="project-card fade-in">
+                    <h5>This website is open source</h5><h5>Date: AUG 2025</h5>
+          <p>This Website is completely Open Source. You can modify it according to your needs. </p>
+          <a href="https://github.com/siddharthan-pradeep07/Personal-Website">GitHub Repo.</a>
+        <!-- Add more project cards as needed, or use JS to generate them dynamically! -->
+      </div>
     </section>
-  </main>
+<script>
+   const aboutBtn = document.getElementById("aboutMeBtn");
+   const aboutModal = document.getElementById("aboutMeModal");
+   const closeBtn = aboutModal.querySelector(".close");
+
+   aboutBtn.addEventListener("click", () => {
+     aboutModal.style.display = "block";
+   });
+
+   closeBtn.addEventListener("click", () => {
+     aboutModal.style.display = "none";
+   });
+
+   window.addEventListener("click", (e) => {
+     if (e.target === aboutModal) {
+       aboutModal.style.display = "none";
+     }
+   });
+</script>
 </body>
 </html>
-
-
-
