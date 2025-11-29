@@ -132,13 +132,19 @@
       background: #111;
     }
 
-    .project-card {
-background: rgba(0, 0, 0, 0.82);
-color: #f5f5f5;
-border-radius: 12px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.45);
-/* keep the rest of your card styles the same */
-}
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      margin-right: 6px;
+      color: #000;
+      background: #f5f5f5;
+      padding: 6px 11px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: background 0.17s, color 0.17s;
+    }
 
     .project-card:hover {
       transform: translateY(-3px);
@@ -326,6 +332,7 @@ box-shadow: 0 10px 30px rgba(0,0,0,0.45);
   </script>
 </body>
 </html>
+
 
 
 
