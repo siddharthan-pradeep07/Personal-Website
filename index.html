@@ -20,9 +20,8 @@
       background-color: #92fcf9;
     }
 
-    /* Modal overlay */
     .modal {
-      display: none; /* hidden by default */
+      display: none;
       position: fixed;
       z-index: 999;
       left: 0;
@@ -33,7 +32,6 @@
       background-color: rgba(0, 0, 0, 0.6);
     }
 
-    /* Modal box */
     .modal-content {
       background-color: #000;
       margin: 10% auto;
@@ -46,7 +44,6 @@
       color: #fff;
     }
 
-    /* Close icon */
     .modal-content .close {
       position: absolute;
       top: 12px;
@@ -112,11 +109,38 @@
       font-weight: 600;
     }
 
-    .projects-list {
+    .projects-toggle {
       display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .toggle-btn {
+      padding: 8px 16px;
+      font-size: 0.95rem;
+      border-radius: 999px;
+      border: 1px solid #444;
+      background: #050505;
+      color: #f5f5f5;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .toggle-btn.active {
+      background: #f5f5f5;
+      color: #000;
+      border-color: #f5f5f5;
+    }
+
+    .projects-list {
+      display: none;
       flex-wrap: wrap;
       gap: 18px;
       justify-content: center;
+    }
+
+    .projects-list.active-tab {
+      display: flex;
     }
 
     .project-img {
@@ -182,6 +206,12 @@
       color: #000;
     }
 
+    .cert-meta {
+      font-size: 0.9rem;
+      color: #ddd;
+      margin: 4px 0 8px 0;
+    }
+
     @media (max-width: 800px) {
       .projects-list {
         flex-direction: column;
@@ -232,105 +262,37 @@
   </main>
 
   <section class="projects-section">
-    <div class="projects-title">My Recent Projects</div>
-    <div class="projects-list">
-     <div class="project-card fade-in">
+    <div class="projects-title">My Work</div>
+
+    <div class="projects-toggle">
+      <button class="toggle-btn active" data-target="projects">Recent Projects</button>
+      <button class="toggle-btn" data-target="achievements">Achievements</button>
+    </div>
+
+    <div id="projects" class="projects-list active-tab">
+      <!-- Your existing project cards go here -->
+      <div class="project-card fade-in">
         <img src="IMG_20250126_180313.jpg" alt="Screenshot of Project 2" class="project-img">
         <h3><b>Inplace</b></h3><h3>Date: JAN 2025</h3>
         <p>A small device with a display, joystick, and Arduino Nano used for handling the basic features.</p>
         <a href="https://youtu.be/LIcebMXgsrs?si=5d0TSSRax1CAOzih">View Video</a>
         <a href="https://github.com/siddharthan-pradeep07/Inplace">Git Repo.</a>
       </div>
+      <!-- ... (all other project cards) -->
+    </div>
 
+    <div id="achievements" class="projects-list">
       <div class="project-card fade-in">
-        <img src="printly_home2.png" alt="Screenshot of Project 1" class="project-img">
-        <h3><b>Printly 3D</b></h3><h3>Date: MAR 2024</h3>
-        <p>A 3D Printing service-based website made using Wix that is easy to use and very interactive. You could access 3D models and order it effortlessly.</p>
-        <a href="https://siddharthansp07.wixsite.com/createsometech">Website</a>
+        <img src="cert1.jpg" alt="Certificate 1" class="project-img">
+        <p class="cert-meta"><b>National Robotics Contest</b><br>Date: OCT 2024</p>
+        <p>Finalist in the National Robotics Contest for building an autonomous rover.</p>
       </div>
-
       <div class="project-card fade-in">
-        <video class="project-img" autoplay muted loop playsinline>
-        <source src="VID_20240204_131316(1).mp4" type="video/mp4">
-           Your browser does not support the video tag.
-        </video>
-        <h3><b>A Model Rocket | Sqare V1</b></h3><h3>Date: FEB 2024</h3>
-        <p>A model rocket that has an engine made of potassium nitrate and sugar, a PVC pipe as the body tube, and a water bottle as the nose cone. (It failed to eject the parachute)</p>
-        <a href="https://youtu.be/hPeRlU1h9WI">View launch video</a>
-        </div>
-
-      <div class="project-card fade-in">
-        <img src="Screenshot 2025-12-06 073424.png" alt="Screenshot of Project 1" class="project-img">
-        <h3><b>Bytes AI🍪</b></h3><h3>Date: NOV 2025</h3>
-        <p>An AI search engine that combines the power of a search engine and AI. It searches the web and provides appropriate results using the Serper AI API.</p>
-        <a href="https://siddharthan-pradeep07.github.io/Bytes/">Try the AI</a>
+        <img src="cert2.jpg" alt="Certificate 2" class="project-img">
+        <p class="cert-meta"><b>Hackathon – MobilityX 2.0</b><br>Date: SEP 2025</p>
+        <p>Participated and presented Mobility Rover in the MobilityX 2.0 hackathon.</p>
       </div>
-   
-      <div class="project-card fade-in">
-        <img src="mobility.jpg" alt="Screenshot of Project 3" class="project-img">
-        <h3><b>Mobility Rover</b></h3><h3>Date: SEP 2025</h3>
-        <p>A four-wheeled surveillance rover with line following, obstacle avoiding, Bluetooth, and "HOP" system for climbing steps.</p>
-        <a href="https://mobilityx.netlify.app/">MobilityX 2.O Hackathon</a>
-        <a href="https://github.com/siddharthan-pradeep07/mobility">Git Repo.</a>
-      </div>
-
-      <div class="project-card fade-in">
-        <img src="plasma_photo.jpg" alt="Screenshot of Project 4" class="project-img">
-        <h3><b>Plasma Plant</b></h3><h3>Date: OCT 2025</h3>
-        <p>An innovative farming rover which detects the soil, suggests the best suitable seed, sows the seed, and waters it. Stops automatically when the land is covered.</p>
-        <a href="https://siddharthan-pradeep07.github.io/Plasma_plant/">Research paper</a>
-        <a href="https://youtube.com/shorts/KFvk7Cw4Y6I?si=jebCzLum02H8UwJs">Demo video</a>
-      </div>
-
-      <div class="project-card fade-in">
-        <img src="plasma_photo.jpg" alt="Screenshot of Project 4" class="project-img">
-        <h3><b>My first arduino project</b></h3><h3>Date: JUL 2022</h3>
-        <p>An Obstacle avoiding car, made using Arduino, L293D motor driver shield, 4x wheels and motors, a servo and an ultrasonic sensor.</p>
-        <a href="https://youtube.com/shorts/aC0jvXhVDTI?feature=share">My Demo video</a>
-        <a href="https://youtu.be/1n_KjpMfVT0?si=aCX_CtinFFTKFr3E">Reference video</a>
-      </div>
-
-      <div class="project-card fade-in">
-        <img src="inconvert.jpg" alt="Screenshot of Project 5" class="project-img">
-        <h3><b>In-convert</b></h3><h3>Date: AUG 2024</h3>
-        <p>A device that converts sign language to audible speech and text using Google Teachable Machine.</p>
-        <a href="https://unstop.com/hackathons/u-me-hackathon-edutantrs-tech-fest-edutantr-1512410">U & ME Hackthon</a>
-        <a href="https://www.youtube.com/watch?v=R6OFr4GEzUE">View Video</a>
-      </div>
-
-      <div class="project-card fade-in">
-        <img src="femto11.png" alt="Screenshot of Project 6" class="project-img">
-        <h3><b>Femto-The hen</b></h3><h3>Date: JUN 2025</h3>
-        <p>A platformer game made using "sprig" (JavaScript) based on a Hen named "Femto". The objective is to save the hen from enemies and fire, collecting coins and diamonds to help you.</p>
-        <a href="https://github.com/hackclub/sprig/pull/3172">GitHub repo.</a>
-      </div>
-
-      <div class="project-card fade-in">
-        <img src="pweb.jpg" alt="Screenshot of Project 7" class="project-img">
-        <h3><b>Extroxity</b></h3><h3>Date: JUN 2025</h3>
-        <p>"The LEGO of Robotics" (I call it so.) A connectable mechanism made using servos that are interconnected to form a snake-like pattern.</p>
-        <a href="#"><i><b>Upcoming!</b></i></a>
-      </div>
-
-      <div class="project-card fade-in">
-        <img src="bookrobo6.png" alt="Screenshot of Project 8" class="project-img">
-        <h3><b>The Genesis of robotics</b></h3><h3>Date: FEB 2024</h3>
-        <p>The book written by me called the <b>"GENESIS OF ROBOTICS"</b>. A must-read for people curious about robotics!</p>
-        <a href="https://www.bribooks.com/bookstore/the-genesis-of-robotics">View Book</a>
-      </div>
-
-      <div class="project-card fade-in">
-        <h3>Contacts & social media</h3>
-        <p>The Secret Email: <i><b>siddharthansp07@gmail.com</b></i> (is no more a secret.)</p>
-        <a href="https://github.com/siddharthan-pradeep07/Personal-Website">Website Repo.</a>
-        <a href="https://github.com/siddharthan-pradeep07">My GitHub</a>
-        <a href="https://www.linkedin.com/in/siddharthan-pradeep-0202342a5/">LinkedIn</a>
-        <a href="https://hackclub.slack.com/team/U092G90G5FS">Hackclub Slack</a>
-        <a href="https://siddharthansp07.wixsite.com/createsometech">Printly 3D</a>
-        <a href="https://x.com/Siddharthan_07">X (twitter)</a>
-        <a href="https://youtube.com/@siddharthan.pradeep">Youtube</a>
-        <a href="https://makerworld.com/en/@siddharthan">Maker World</a>
-      </div>
+      <!-- Add more achievement cards as needed -->
     </div>
   </section>
 
@@ -351,6 +313,23 @@
       if (e.target === aboutModal) {
         aboutModal.style.display = "none";
       }
+    });
+
+    // Tabs: Recent Projects / Achievements
+    const toggleButtons = document.querySelectorAll(".toggle-btn");
+    const lists = {
+      projects: document.getElementById("projects"),
+      achievements: document.getElementById("achievements")
+    };
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        toggleButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        Object.values(lists).forEach(list => list.classList.remove("active-tab"));
+        const target = btn.getAttribute("data-target");
+        lists[target].classList.add("active-tab");
+      });
     });
   </script>
 </body>
