@@ -98,7 +98,8 @@
       padding: 0 18px;
     }
 
-    .projects-section, .gallery-section {
+    .projects-section,
+    .gallery-section {
       margin: 32px auto 40px auto;
       max-width: 980px;
       padding: 0 18px 40px 18px;
@@ -112,14 +113,16 @@
       font-weight: 600;
     }
 
-    .projects-list, .gallery-list {
+    .projects-list,
+    .gallery-list {
       display: flex;
       flex-wrap: wrap;
       gap: 18px;
       justify-content: center;
     }
 
-    .project-img, .gallery-img {
+    .project-img,
+    .gallery-img {
       width: 100%;
       height: 200px;
       object-fit: cover;
@@ -129,7 +132,8 @@
       background: #111;
     }
 
-    .project-card, .gallery-item {
+    .project-card,
+    .gallery-item {
       background: #050505;
       border-radius: 12px;
       box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
@@ -144,26 +148,30 @@
       cursor: pointer;
     }
 
-    .project-card:hover, .gallery-item:hover {
+    .project-card:hover,
+    .gallery-item:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.55);
       background: #0b0b0b;
     }
 
-    .project-card h3, .gallery-item h3 {
+    .project-card h3,
+    .gallery-item h3 {
       font-size: 1rem;
       margin: 4px 0;
       color: #f5f5f5;
     }
 
-    .project-card p, .gallery-item p {
+    .project-card p,
+    .gallery-item p {
       font-size: 0.9rem;
       line-height: 1.4;
       color: #bababa;
       flex-grow: 1;
     }
 
-    .project-card a, .gallery-item a {
+    .project-card a,
+    .gallery-item a {
       display: inline-block;
       margin-top: 10px;
       margin-right: 6px;
@@ -177,13 +185,15 @@
       transition: background 0.17s, color 0.17s;
     }
 
-    .project-card a:hover, .gallery-item a:hover {
+    .project-card a:hover,
+    .gallery-item a:hover {
       background: #97CDF4;
       color: #000;
     }
 
     @media (max-width: 800px) {
-      .projects-list, .gallery-list {
+      .projects-list,
+      .gallery-list {
         flex-direction: column;
         gap: 18px;
         align-items: stretch;
@@ -208,6 +218,68 @@
         transform: none;
       }
     }
+
+    /* ===== Switch toggle styles ===== */
+
+    .toggle-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto 28px auto;
+    }
+
+    .toggle-label {
+      font-size: 0.9rem;
+      color: #f5f5f5;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 52px;
+      height: 28px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #444;
+      transition: background-color 0.25s ease;
+      border-radius: 34px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
+    }
+
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 3px;
+      bottom: 3px;
+      background-color: #fff;
+      transition: transform 0.25s ease;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .switch input:checked + .slider {
+      background-color: #00d14a;
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(24px);
+    }
   </style>
 </head>
 <body>
@@ -226,18 +298,26 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>About Me</h2>
-        <p>Hello, <b>I'm Siddharthan, a 14-year-old</b> who likes to create <I>awesome</I> things with his 3D printer, Raspberry Pi 5, Arduino, some unorganised electronics, HTML stuff, rocketry and some machine learning.</p>
+        <p>Hello, <b>I'm Siddharthan, a 14-year-old</b> who likes to create <i>awesome</i> things with his 3D printer, Raspberry Pi 5, Arduino, some unorganised electronics, HTML stuff, rocketry and some machine learning.</p>
       </div>
     </div>
-  </main>
 
-  <!-- Toggle Button -->
-  <button id="toggleBtn" class="about-btn">Toggle Gallery</button>
+    <!-- Switch Toggle -->
+    <div class="toggle-wrapper">
+      <span class="toggle-label">Projects</span>
+      <label class="switch">
+        <input type="checkbox" id="viewToggle">
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-label">Gallery</span>
+    </div>
+  </main>
 
   <!-- Projects Section -->
   <section id="projectsSection" class="projects-section">
     <div class="projects-title">My Recent Projects</div>
     <div class="projects-list">
+
       <div class="project-card fade-in">
         <img src="IMG_20250126_180313.jpg" alt="Screenshot of Project 2" class="project-img">
         <h3><b>Inplace</b></h3><h3>Date: JAN 2025</h3>
@@ -269,7 +349,7 @@
         <p>An AI search engine that combines the power of a search engine and AI. It searches the web and provides appropriate results using the Serper AI API.</p>
         <a href="https://siddharthan-pradeep07.github.io/Bytes/">Try the AI</a>
       </div>
-   
+
       <div class="project-card fade-in">
         <img src="mobility.jpg" alt="Screenshot of Project 3" class="project-img">
         <h3><b>Mobility Rover</b></h3><h3>Date: SEP 2025</h3>
@@ -289,7 +369,7 @@
       <div class="project-card fade-in">
         <img src="rocket-flight-website.jpg" alt="Screenshot of Project 4" class="project-img">
         <h3><b>Rocket flight graph convertor</b></h3><h3>Date: DEC 2025</h3>
-        <p>Converts the reading of an 3 axis accelometer (in .CSV file format) to a virtual graph that shows the x, y and z values. It also shows the overall stability of rocket in percentage</p>
+        <p>Converts the reading of a 3 axis accelerometer (in .CSV file format) to a virtual graph that shows the x, y and z values. It also shows the overall stability of rocket in percentage.</p>
         <a href="https://siddharthan-pradeep07.github.io/rocket-flight-viewer/">View project</a>
         <a href="https://youtu.be/JyFkoDXhUoo?si=samBCfePgeT9uBVh">Demo video</a>
       </div>
@@ -301,7 +381,7 @@
         </video>
         <h3><b>My first arduino project</b></h3><h3>Date: JUL 2022</h3>
         <p>An Obstacle avoiding car, made using Arduino, L293D motor driver shield, 4x wheels and motors, a servo and an ultrasonic sensor.</p>
-        <a href="https://youtube.com/shorts/aC0jvXhVDTI?feature=share">My Demo video</a>
+        <a href="https://youtube.com/shorts/aC0jVhVDTI?feature=share">My Demo video</a>
         <a href="https://youtu.be/1n_KjpMfVT0?si=aCX_CtinFFTKFr3E">Reference video</a>
       </div>
 
@@ -316,7 +396,7 @@
       <div class="project-card fade-in">
         <img src="femto11.png" alt="Screenshot of Project 6" class="project-img">
         <h3><b>Femto-The hen</b></h3><h3>Date: JUN 2025</h3>
-        <p>A platformer game made using "sprig" (JavaScript) based on a Hen named "Femto". The objective is to save the hen from enemies and fire, collecting coins and diamonds to help you.</p>
+        <p>A platformer game made using "sprig" (JavaScript) based on a hen named "Femto". The objective is to save the hen from enemies and fire, collecting coins and diamonds to help you.</p>
         <a href="https://github.com/hackclub/sprig/pull/3172">GitHub repo.</a>
       </div>
 
@@ -346,28 +426,37 @@
         <a href="https://youtube.com/@siddharthan.pradeep">Youtube</a>
         <a href="https://makerworld.com/en/@siddharthan">Maker World</a>
       </div>
+
     </div>
   </section>
 
   <!-- Gallery Section -->
-  <section id="gallerySection" class="gallery-section" style="display: none;">
+  <section id="gallerySection" class="gallery-section" style="display:none;">
     <div class="projects-title">Gallery</div>
     <div class="gallery-list">
+      <!-- Example gallery items; duplicate/change as needed -->
       <div class="gallery-item fade-in">
-        <img src="your-image1.jpg" alt="Gallery Image 1" class="gallery-img">
-        <p>Description of image 1</p>
+        <img src="IMG_20250126_180313.jpg" alt="Inplace device" class="gallery-img">
+        <p>Inplace device close-up.</p>
         <p>Date: JAN 2025</p>
       </div>
+
       <div class="gallery-item fade-in">
-        <img src="your-image2.jpg" alt="Gallery Image 2" class="gallery-img">
-        <p>Description of image 2</p>
-        <p>Date: FEB 2025</p>
+        <img src="mobility.jpg" alt="Mobility rover" class="gallery-img">
+        <p>Mobility Rover outdoor shot.</p>
+        <p>Date: SEP 2025</p>
       </div>
-      <!-- Add more gallery items as needed -->
+
+      <div class="gallery-item fade-in">
+        <img src="plasma_photo.jpg" alt="Plasma Plant" class="gallery-img">
+        <p>Plasma Plant field test.</p>
+        <p>Date: OCT 2025</p>
+      </div>
     </div>
   </section>
 
   <script>
+    // About modal
     const aboutBtn = document.getElementById("aboutMeBtn");
     const aboutModal = document.getElementById("aboutMeModal");
     const closeBtn = aboutModal.querySelector(".close");
@@ -386,19 +475,18 @@
       }
     });
 
-    const toggleBtn = document.getElementById("toggleBtn");
+    // Switch toggle logic
+    const viewToggle = document.getElementById("viewToggle");
     const projectsSection = document.getElementById("projectsSection");
     const gallerySection = document.getElementById("gallerySection");
 
-    toggleBtn.addEventListener("click", () => {
-      if (projectsSection.style.display === "none") {
-        projectsSection.style.display = "block";
-        gallerySection.style.display = "none";
-        toggleBtn.textContent = "Toggle Gallery";
-      } else {
+    viewToggle.addEventListener("change", () => {
+      if (viewToggle.checked) {
         projectsSection.style.display = "none";
         gallerySection.style.display = "block";
-        toggleBtn.textContent = "Toggle Projects";
+      } else {
+        projectsSection.style.display = "block";
+        gallerySection.style.display = "none";
       }
     });
   </script>
