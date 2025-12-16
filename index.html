@@ -113,7 +113,15 @@
       font-weight: 600;
     }
 
-    .projects-list,
+    /* Recent projects – grid layout */
+    .projects-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+    }
+
+    /* Gallery list – stack group cards */
     .gallery-list {
       display: flex;
       flex-direction: column;
@@ -140,7 +148,7 @@
       min-width: 240px;
       max-width: 280px;
       padding: 16px 14px 14px 14px;
-      margin: 0 auto;
+      margin: 0;
       display: flex;
       flex-direction: column;
       transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
@@ -186,6 +194,10 @@
     }
 
     @media (max-width: 800px) {
+      .projects-list {
+        flex-direction: column;
+        align-items: stretch;
+      }
       .project-card {
         max-width: 100%;
       }
@@ -462,7 +474,7 @@
         <h3>Contacts & social media</h3>
         <p>The Secret Email: <i><b>siddharthansp07@gmail.com</b></i> (is no more a secret.)</p>
         <a href="https://github.com/siddharthan-pradeep07/Personal-Website">Website Repo.</a>
-        <a href="https://github.com/siddharthan-pradeep-07">My GitHub</a>
+        <a href="https://github.com/siddharthan-pradeep07">My GitHub</a>
         <a href="https://www.linkedin.com/in/siddharthan-pradeep-0202342a5/">LinkedIn</a>
         <a href="https://hackclub.slack.com/team/U092G90G5FS">Hackclub Slack</a>
         <a href="https://siddharthansp07.wixsite.com/createsometech">Printly 3D</a>
@@ -567,5 +579,3 @@
   </script>
 </body>
 </html>
-
-
