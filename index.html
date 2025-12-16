@@ -256,6 +256,10 @@
       transition: transform 0.25s ease;
     }
 
+    .mode-toggle.shift-text {
+      transform: translateX(-4px);
+    }
+
     .mode-option {
       position: relative;
       z-index: 2;
@@ -283,7 +287,8 @@
       background: #ffffff;           /* capsule always white */
       z-index: 1;
       transition: transform 0.28s ease;
-      box-shadow: 0 0 0 0 rgba(0,0,0,0); /* base, real glow via pseudo */
+      box-shadow: 0 0 0 0 rgba(0,0,0,0);
+      transform: translateX(0);      /* default at Projects */
     }
 
     .mode-slider::before {
@@ -310,17 +315,12 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* Positions controlled by JS; classes kept for semantic clarity */
+    /* gallery / achievements positions (used together with inline transform) */
     .mode-slider.gallery {
       transform: translateX(100%);
     }
-
     .mode-slider.achievements {
       transform: translateX(200%);
-    }
-
-    .mode-toggle.shift-text {
-      transform: translateX(-4px);
     }
 
     /* ===== Gallery group card styles ===== */
@@ -406,8 +406,15 @@
   <section id="projectsSection" class="projects-section">
     <div class="projects-title">My Recent Projects</div>
     <div class="projects-list">
-      <!-- all your project cards, unchanged -->
-      <!-- ... (same as previous answer) ... -->
+      <!-- put all your project cards here (same as previous working version) -->
+      <div class="project-card fade-in">
+        <img src="IMG_20250126_180313.jpg" alt="Inplace" class="project-img">
+        <h3><b>Inplace</b></h3><h3>Date: JAN 2025</h3>
+        <p>A small device with a display, joystick, and Arduino Nano used for handling the basic features.</p>
+        <a href="https://youtu.be/LIcebMXgsrs?si=5d0TSSRax1CAOzih">View Video</a>
+        <a href="https://github.com/siddharthan-pradeep07/Inplace">Git Repo.</a>
+      </div>
+      <!-- ... (rest of your project cards unchanged) ... -->
     </div>
   </section>
 
@@ -415,8 +422,22 @@
   <section id="gallerySection" class="gallery-section" style="display:none;">
     <div class="projects-title">Gallery</div>
     <div class="gallery-list">
-      <!-- gallery group cards -->
-      <!-- ... -->
+      <div class="gallery-group-card fade-in">
+        <h3>Inplace – Close‑ups</h3>
+        <p class="group-meta">Date: JAN 2025 · A compact Arduino‑based device with joystick and display.</p>
+        <div class="gallery-group-images">
+          <div class="gallery-item">
+            <img src="IMG_20250126_180313.jpg" alt="Inplace front view" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="inplace_side.jpg" alt="Inplace side view" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="inplace_back.jpg" alt="Inplace back view" class="gallery-img">
+          </div>
+        </div>
+      </div>
+      <!-- other group cards ... -->
     </div>
   </section>
 
@@ -424,8 +445,13 @@
   <section id="achievementsSection" class="achievements-section" style="display:none;">
     <div class="projects-title">Achievements</div>
     <div class="achievements-list">
-      <!-- achievement cards -->
-      <!-- ... -->
+      <div class="achievement-card fade-in">
+        <img src="trophy1.jpg" alt="Hackathon win" class="achievement-img">
+        <h3><b>MobilityX 2.0 Hackathon</b></h3>
+        <p>Recognized for Mobility Rover, a step‑climbing surveillance bot with multiple modes of operation.</p>
+        <p><b>Date:</b> SEP 2025</p>
+      </div>
+      <!-- other achievements ... -->
     </div>
   </section>
 
@@ -459,24 +485,24 @@
     const achievementsSection = document.getElementById("achievementsSection");
 
     function setMode(mode) {
+      // label active state
       modeOptions.forEach(opt => {
         opt.classList.toggle("active", opt.dataset.mode === mode);
       });
 
-      // remove previous position classes
-      modeSlider.classList.remove("gallery", "achievements");
-      modeToggle.classList.remove("shift-text");
-
+      // capsule position
       if (mode === "projects") {
         modeSlider.style.transform = "translateX(0)";
+        modeToggle.classList.remove("shift-text");
       } else if (mode === "gallery") {
-        modeSlider.classList.add("gallery");
+        modeSlider.style.transform = "translateX(100%)";
         modeToggle.classList.add("shift-text");
       } else if (mode === "achievements") {
-        modeSlider.classList.add("achievements");
+        modeSlider.style.transform = "translateX(200%)";
         modeToggle.classList.add("shift-text");
       }
 
+      // section visibility
       projectsSection.style.display = (mode === "projects") ? "block" : "none";
       gallerySection.style.display = (mode === "gallery") ? "block" : "none";
       achievementsSection.style.display = (mode === "achievements") ? "block" : "none";
@@ -488,6 +514,7 @@
       });
     });
 
+    // initial
     setMode("projects");
   </script>
 </body>
