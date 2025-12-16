@@ -116,7 +116,7 @@
     .projects-list,
     .gallery-list {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 18px;
       justify-content: center;
     }
@@ -132,8 +132,7 @@
       background: #111;
     }
 
-    .project-card,
-    .gallery-item {
+    .project-card {
       background: #050505;
       border-radius: 12px;
       box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
@@ -141,37 +140,33 @@
       min-width: 240px;
       max-width: 280px;
       padding: 16px 14px 14px 14px;
-      margin: 0;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
       cursor: pointer;
     }
 
-    .project-card:hover,
-    .gallery-item:hover {
+    .project-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.55);
       background: #0b0b0b;
     }
 
-    .project-card h3,
-    .gallery-item h3 {
+    .project-card h3 {
       font-size: 1rem;
       margin: 4px 0;
       color: #f5f5f5;
     }
 
-    .project-card p,
-    .gallery-item p {
+    .project-card p {
       font-size: 0.9rem;
       line-height: 1.4;
       color: #bababa;
       flex-grow: 1;
     }
 
-    .project-card a,
-    .gallery-item a {
+    .project-card a {
       display: inline-block;
       margin-top: 10px;
       margin-right: 6px;
@@ -185,18 +180,14 @@
       transition: background 0.17s, color 0.17s;
     }
 
-    .project-card a:hover,
-    .gallery-item a:hover {
+    .project-card a:hover {
       background: #97CDF4;
       color: #000;
     }
 
     @media (max-width: 800px) {
-      .projects-list,
-      .gallery-list {
-        flex-direction: column;
-        gap: 18px;
-        align-items: stretch;
+      .project-card {
+        max-width: 100%;
       }
       main {
         margin: 28px auto;
@@ -227,11 +218,17 @@
       justify-content: center;
       gap: 10px;
       margin: 0 auto 28px auto;
+      transition: transform 0.25s ease;
+    }
+
+    .toggle-wrapper.shift-left {
+      transform: translateX(-6px);
     }
 
     .toggle-label {
       font-size: 0.9rem;
       color: #f5f5f5;
+      transition: transform 0.25s ease;
     }
 
     .switch {
@@ -280,6 +277,53 @@
     .switch input:checked + .slider::before {
       transform: translateX(24px);
     }
+
+    /* ===== Gallery group card styles ===== */
+
+    .gallery-group-card {
+      background: #050505;
+      border-radius: 12px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+      padding: 16px 14px 18px 14px;
+      margin: 0 auto 22px auto;
+      max-width: 900px;
+    }
+
+    .gallery-group-card h3 {
+      margin: 0 0 4px 0;
+      font-size: 1rem;
+      color: #f5f5f5;
+    }
+
+    .group-meta {
+      margin: 0 0 12px 0;
+      font-size: 0.85rem;
+      color: #b0b0b0;
+    }
+
+    .gallery-group-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gallery-group-images .gallery-item {
+      flex: 1 1 120px;
+      min-width: 110px;
+      max-width: 150px;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      cursor: default;
+    }
+
+    .gallery-group-images .gallery-img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 0;
+      background: #111;
+    }
   </style>
 </head>
 <body>
@@ -304,12 +348,12 @@
 
     <!-- Switch Toggle -->
     <div class="toggle-wrapper">
-      <span class="toggle-label">Projects</span>
+      <span class="toggle-label toggle-label-left">Projects</span>
       <label class="switch">
         <input type="checkbox" id="viewToggle">
         <span class="slider"></span>
       </label>
-      <span class="toggle-label">Gallery</span>
+      <span class="toggle-label toggle-label-right">Gallery</span>
     </div>
   </main>
 
@@ -381,7 +425,7 @@
         </video>
         <h3><b>My first arduino project</b></h3><h3>Date: JUL 2022</h3>
         <p>An Obstacle avoiding car, made using Arduino, L293D motor driver shield, 4x wheels and motors, a servo and an ultrasonic sensor.</p>
-        <a href="https://youtube.com/shorts/aC0jVhVDTI?feature=share">My Demo video</a>
+        <a href="https://youtube.com/shorts/aC0jvXhVDTI?feature=share">My Demo video</a>
         <a href="https://youtu.be/1n_KjpMfVT0?si=aCX_CtinFFTKFr3E">Reference video</a>
       </div>
 
@@ -396,7 +440,7 @@
       <div class="project-card fade-in">
         <img src="femto11.png" alt="Screenshot of Project 6" class="project-img">
         <h3><b>Femto-The hen</b></h3><h3>Date: JUN 2025</h3>
-        <p>A platformer game made using "sprig" (JavaScript) based on a hen named "Femto". The objective is to save the hen from enemies and fire, collecting coins and diamonds to help you.</p>
+        <p>A platformer game made using "sprig" (JavaScript) based on a Hen named "Femto". The objective is to save the hen from enemies and fire, collecting coins and diamonds to help you.</p>
         <a href="https://github.com/hackclub/sprig/pull/3172">GitHub repo.</a>
       </div>
 
@@ -418,7 +462,7 @@
         <h3>Contacts & social media</h3>
         <p>The Secret Email: <i><b>siddharthansp07@gmail.com</b></i> (is no more a secret.)</p>
         <a href="https://github.com/siddharthan-pradeep07/Personal-Website">Website Repo.</a>
-        <a href="https://github.com/siddharthan-pradeep07">My GitHub</a>
+        <a href="https://github.com/siddharthan-pradeep-07">My GitHub</a>
         <a href="https://www.linkedin.com/in/siddharthan-pradeep-0202342a5/">LinkedIn</a>
         <a href="https://hackclub.slack.com/team/U092G90G5FS">Hackclub Slack</a>
         <a href="https://siddharthansp07.wixsite.com/createsometech">Printly 3D</a>
@@ -434,24 +478,52 @@
   <section id="gallerySection" class="gallery-section" style="display:none;">
     <div class="projects-title">Gallery</div>
     <div class="gallery-list">
-      <!-- Example gallery items; duplicate/change as needed -->
-      <div class="gallery-item fade-in">
-        <img src="IMG_20250126_180313.jpg" alt="Inplace device" class="gallery-img">
-        <p>Inplace device close-up.</p>
-        <p>Date: JAN 2025</p>
+
+      <!-- GROUP CARD 1 -->
+      <div class="gallery-group-card fade-in">
+        <h3>Inplace – Close‑ups</h3>
+        <p class="group-meta">Date: JAN 2025 · A compact Arduino‑based device with joystick and display.</p>
+        <div class="gallery-group-images">
+          <div class="gallery-item">
+            <img src="IMG_20250126_180313.jpg" alt="Inplace front view" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="inplace_side.jpg" alt="Inplace side view" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="inplace_back.jpg" alt="Inplace back view" class="gallery-img">
+          </div>
+        </div>
       </div>
 
-      <div class="gallery-item fade-in">
-        <img src="mobility.jpg" alt="Mobility rover" class="gallery-img">
-        <p>Mobility Rover outdoor shot.</p>
-        <p>Date: SEP 2025</p>
+      <!-- GROUP CARD 2 -->
+      <div class="gallery-group-card fade-in">
+        <h3>Mobility Rover – Shots</h3>
+        <p class="group-meta">Date: SEP 2025 · Surveillance rover with line following and HOP system.</p>
+        <div class="gallery-group-images">
+          <div class="gallery-item">
+            <img src="mobility.jpg" alt="Mobility rover full view" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="mobility_close.jpg" alt="Mobility rover close view" class="gallery-img">
+          </div>
+        </div>
       </div>
 
-      <div class="gallery-item fade-in">
-        <img src="plasma_photo.jpg" alt="Plasma Plant" class="gallery-img">
-        <p>Plasma Plant field test.</p>
-        <p>Date: OCT 2025</p>
+      <!-- GROUP CARD 3 -->
+      <div class="gallery-group-card fade-in">
+        <h3>Plasma Plant – Field</h3>
+        <p class="group-meta">Date: OCT 2025 · Plasma Plant rover testing on soil.</p>
+        <div class="gallery-group-images">
+          <div class="gallery-item">
+            <img src="plasma_photo.jpg" alt="Plasma Plant in field" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="plasma_close.jpg" alt="Plasma Plant close view" class="gallery-img">
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -479,16 +551,21 @@
     const viewToggle = document.getElementById("viewToggle");
     const projectsSection = document.getElementById("projectsSection");
     const gallerySection = document.getElementById("gallerySection");
+    const toggleWrapper = document.querySelector(".toggle-wrapper");
 
     viewToggle.addEventListener("change", () => {
       if (viewToggle.checked) {
         projectsSection.style.display = "none";
         gallerySection.style.display = "block";
+        toggleWrapper.classList.add("shift-left");
       } else {
         projectsSection.style.display = "block";
         gallerySection.style.display = "none";
+        toggleWrapper.classList.remove("shift-left");
       }
     });
   </script>
 </body>
 </html>
+
+
