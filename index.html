@@ -32,7 +32,6 @@
       overflow: auto;
       background-color: rgba(0, 0, 0, 0.6);
     }
-
     .modal-content {
       background-color: #000;
       margin: 10% auto;
@@ -44,7 +43,6 @@
       animation: fadeInModal 0.3s ease;
       color: #fff;
     }
-
     .modal-content .close {
       position: absolute;
       top: 12px;
@@ -57,7 +55,6 @@
     .modal-content .close:hover {
       color: #fff;
     }
-
     @keyframes fadeInModal {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -69,7 +66,6 @@
       background: #000000;
       color: #f5f5f5;
     }
-
     header {
       background: #000000;
       color: #f5f5f5;
@@ -77,12 +73,10 @@
       text-align: center;
       box-shadow: 0 1px 6px rgba(0,0,0,0.07);
     }
-
     header h1 {
       font-size: 2.1rem;
       margin-bottom: 6px;
     }
-
     header p {
       font-size: 1rem;
       max-width: 720px;
@@ -103,29 +97,26 @@
       max-width: 980px;
       padding: 0 18px 40px 18px;
     }
-
     .projects-title {
       font-size: 1.6rem;
       margin-bottom: 24px;
-      margin-left: 0;
       color: #fff;
       font-weight: 600;
     }
 
+    /* Layouts */
     .projects-list {
       display: flex;
       flex-wrap: wrap;
       gap: 18px;
       justify-content: center;
     }
-
     .gallery-list {
       display: flex;
       flex-direction: column;
       gap: 18px;
       justify-content: center;
     }
-
     .achievements-list {
       display: flex;
       flex-wrap: wrap;
@@ -141,7 +132,6 @@
       object-fit: cover;
       border-radius: 10px;
       margin-bottom: 12px;
-      box-shadow: none;
       background: #111;
     }
 
@@ -160,21 +150,18 @@
       transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
       cursor: pointer;
     }
-
     .project-card:hover,
     .achievement-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.55);
       background: #0b0b0b;
     }
-
     .project-card h3,
     .achievement-card h3 {
       font-size: 1rem;
       margin: 4px 0;
       color: #f5f5f5;
     }
-
     .project-card p,
     .achievement-card p {
       font-size: 0.9rem;
@@ -182,7 +169,6 @@
       color: #bababa;
       flex-grow: 1;
     }
-
     .project-card a,
     .achievement-card a {
       display: inline-block;
@@ -197,7 +183,6 @@
       font-weight: 500;
       transition: background 0.17s, color 0.17s;
     }
-
     .project-card a:hover,
     .achievement-card a:hover {
       background: #97CDF4;
@@ -227,52 +212,38 @@
     .fade-in:nth-child(2) { animation-delay: .17s; }
     .fade-in:nth-child(3) { animation-delay: .34s; }
     .fade-in:nth-child(4) { animation-delay: .51s; }
-
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: none;
-      }
+      to { opacity: 1; transform: none; }
     }
 
-    /* ===== 3‑option segmented toggle (white capsule + animated glow) ===== */
-
+    /* ===== 3‑option segmented toggle (white capsule + multicolor border) ===== */
     .mode-toggle-wrapper {
       display: flex;
       justify-content: center;
       margin: 0 auto 28px auto;
     }
-
     .mode-toggle {
       position: relative;
       background: #151515;
       border-radius: 999px;
       padding: 6px;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 6px;
       box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
-      min-width: 260px;
-      transition: transform 0.25s ease;
     }
-
-    .mode-toggle.shift-text {
-      transform: translateX(-4px);
-    }
-
     .mode-option {
       position: relative;
       z-index: 2;
-      flex: 1 1 0;
       text-align: center;
       font-size: 0.88rem;
-      padding: 8px 10px;
+      padding: 8px 14px;
       cursor: pointer;
       color: #9c9c9c;
       transition: color 0.25s ease;
       user-select: none;
+      white-space: nowrap;
     }
-
     .mode-option.active {
       color: #000;
       font-weight: 600;
@@ -280,51 +251,55 @@
 
     .mode-slider {
       position: absolute;
-      top: 4px;
-      bottom: 4px;
-      width: calc(33.33% - 8px);
+      top: 6px;
+      bottom: 6px;
+      left: 6px;
       border-radius: 999px;
-      background: #ffffff;           /* capsule always white */
+      background: #000;
       z-index: 1;
-      transition: transform 0.28s ease;
-      box-shadow: 0 0 0 0 rgba(0,0,0,0);
-      transform: translateX(0);      /* default at Projects */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.28s ease, width 0.28s ease;
     }
-
-    .mode-slider::before {
+    /* inner white capsule with static multicolor border */
+    .mode-slider-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: #fff;
+      padding: 1px;           /* space for border look */
+    }
+    .mode-slider-inner::before {
       content: "";
       position: absolute;
-      inset: -5px;
+      inset: 0;
       border-radius: inherit;
+      padding: 2px;
       background: conic-gradient(
-        from 0deg,
         #00ff9d,
         #00d2ff,
         #ff00ff,
         #ffcc00,
         #00ff9d
       );
-      filter: blur(10px);
-      opacity: 0.7;
-      z-index: -1;
-      animation: glow-spin 4s linear infinite;
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
     }
 
-    @keyframes glow-spin {
-      0%   { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* gallery / achievements positions (used together with inline transform) */
-    .mode-slider.gallery {
-      transform: translateX(100%);
-    }
-    .mode-slider.achievements {
-      transform: translateX(200%);
+    /* content inside slider (fully transparent, we just need shape/border) */
+    .mode-slider-inner span {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      background: #ffffff;
     }
 
     /* ===== Gallery group card styles ===== */
-
     .gallery-group-card {
       background: #050505;
       border-radius: 12px;
@@ -333,25 +308,21 @@
       margin: 0 auto 22px auto;
       max-width: 900px;
     }
-
     .gallery-group-card h3 {
       margin: 0 0 4px 0;
       font-size: 1rem;
       color: #f5f5f5;
     }
-
     .group-meta {
       margin: 0 0 12px 0;
       font-size: 0.85rem;
       color: #b0b0b0;
     }
-
     .gallery-group-images {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
-
     .gallery-group-images .gallery-item {
       flex: 1 1 120px;
       min-width: 110px;
@@ -361,7 +332,6 @@
       box-shadow: none;
       cursor: default;
     }
-
     .gallery-group-images .gallery-img {
       width: 100%;
       height: auto;
@@ -394,7 +364,9 @@
     <!-- 3‑option segmented toggle -->
     <div class="mode-toggle-wrapper">
       <div class="mode-toggle" id="modeToggle">
-        <div class="mode-slider" id="modeSlider"></div>
+        <div class="mode-slider" id="modeSlider">
+          <div class="mode-slider-inner"><span></span></div>
+        </div>
         <div class="mode-option active" data-mode="projects">Projects</div>
         <div class="mode-option" data-mode="gallery">Gallery</div>
         <div class="mode-option" data-mode="achievements">Achievements</div>
@@ -406,7 +378,7 @@
   <section id="projectsSection" class="projects-section">
     <div class="projects-title">My Recent Projects</div>
     <div class="projects-list">
-      <!-- put all your project cards here (same as previous working version) -->
+
       <div class="project-card fade-in">
         <img src="IMG_20250126_180313.jpg" alt="Inplace" class="project-img">
         <h3><b>Inplace</b></h3><h3>Date: JAN 2025</h3>
@@ -414,7 +386,108 @@
         <a href="https://youtu.be/LIcebMXgsrs?si=5d0TSSRax1CAOzih">View Video</a>
         <a href="https://github.com/siddharthan-pradeep07/Inplace">Git Repo.</a>
       </div>
-      <!-- ... (rest of your project cards unchanged) ... -->
+
+      <div class="project-card fade-in">
+        <img src="printly_home2.png" alt="Printly 3D" class="project-img">
+        <h3><b>Printly 3D</b></h3><h3>Date: MAR 2024</h3>
+        <p>A 3D printing service website made using Wix that is easy to use and interactive.</p>
+        <a href="https://siddharthansp07.wixsite.com/createsometech">Website</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <video class="project-img" autoplay muted loop playsinline>
+          <source src="VID_20240204_131316(1).mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3><b>A Model Rocket | Square V1</b></h3><h3>Date: FEB 2024</h3>
+        <p>A model rocket using a KNO3–sugar engine, PVC body tube, and bottle nose cone. The parachute failed to eject.</p>
+        <a href="https://youtu.be/hPeRlU1h9WI">View launch video</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="Screenshot 2025-12-06 073424.png" alt="Bytes AI" class="project-img">
+        <h3><b>Bytes AI🍪</b></h3><h3>Date: NOV 2025</h3>
+        <p>An AI search engine that uses the Serper AI API to search the web and summarize results.</p>
+        <a href="https://siddharthan-pradeep07.github.io/Bytes/">Try the AI</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="mobility.jpg" alt="Mobility Rover" class="project-img">
+        <h3><b>Mobility Rover</b></h3><h3>Date: SEP 2025</h3>
+        <p>A four‑wheeled surveillance rover with line following, obstacle avoiding, Bluetooth, and a HOP system for steps.</p>
+        <a href="https://mobilityx.netlify.app/">MobilityX 2.O Hackathon</a>
+        <a href="https://github.com/siddharthan-pradeep07/mobility">Git Repo.</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="plasma_photo.jpg" alt="Plasma Plant" class="project-img">
+        <h3><b>Plasma Plant</b></h3><h3>Date: OCT 2025</h3>
+        <p>An innovative farming rover that detects soil, suggests seeds, sows, and waters automatically until the land is covered.</p>
+        <a href="https://siddharthan-pradeep07.github.io/Plasma_plant/">Research paper</a>
+        <a href="https://youtube.com/shorts/KFvk7Cw4Y6I?si=jebCzLum02H8UwJs">Demo video</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="rocket-flight-website.jpg" alt="Rocket flight viewer" class="project-img">
+        <h3><b>Rocket flight graph convertor</b></h3><h3>Date: DEC 2025</h3>
+        <p>Reads 3‑axis accelerometer CSV data and renders a virtual flight graph plus a stability percentage.</p>
+        <a href="https://siddharthan-pradeep07.github.io/rocket-flight-viewer/">View project</a>
+        <a href="https://youtu.be/JyFkoDXhUoo?si=samBCfePgeT9uBVh">Demo video</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <video class="project-img" autoplay muted loop playsinline>
+          <source src="hello.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h3><b>My first arduino project</b></h3><h3>Date: JUL 2022</h3>
+        <p>An obstacle‑avoiding car using Arduino, L293D shield, DC motors, servo, and ultrasonic sensor.</p>
+        <a href="https://youtube.com/shorts/aC0jvXhVDTI?feature=share">My Demo video</a>
+        <a href="https://youtu.be/1n_KjpMfVT0?si=aCX_CtinFFTKFr3E">Reference video</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="inconvert.jpg" alt="In‑convert" class="project-img">
+        <h3><b>In-convert</b></h3><h3>Date: AUG 2024</h3>
+        <p>A device that converts sign language to audible speech and text using Google Teachable Machine.</p>
+        <a href="https://unstop.com/hackathons/u-me-hackathon-edutantrs-tech-fest-edutantr-1512410">U & ME Hackathon</a>
+        <a href="https://www.youtube.com/watch?v=R6OFr4GEzUE">View Video</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="femto11.png" alt="Femto game" class="project-img">
+        <h3><b>Femto-The hen</b></h3><h3>Date: JUN 2025</h3>
+        <p>A Sprig JavaScript platformer where you save a hen from enemies and fire while collecting coins and diamonds.</p>
+        <a href="https://github.com/hackclub/sprig/pull/3172">GitHub repo.</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="pweb.jpg" alt="Extroxity" class="project-img">
+        <h3><b>Extroxity</b></h3><h3>Date: JUN 2025</h3>
+        <p>“The LEGO of Robotics” – inter‑connectable servo‑based segments forming a snake‑like mechanism.</p>
+        <a href="#"><i><b>Upcoming!</b></i></a>
+      </div>
+
+      <div class="project-card fade-in">
+        <img src="bookrobo6.png" alt="Genesis of robotics book" class="project-img">
+        <h3><b>The Genesis of robotics</b></h3><h3>Date: FEB 2024</h3>
+        <p>A beginner‑friendly robotics book written by you for curious readers.</p>
+        <a href="https://www.bribooks.com/bookstore/the-genesis-of-robotics">View Book</a>
+      </div>
+
+      <div class="project-card fade-in">
+        <h3>Contacts & social media</h3>
+        <p>The Secret Email: <i><b>siddharthansp07@gmail.com</b></i> (is no more a secret.)</p>
+        <a href="https://github.com/siddharthan-pradeep07/Personal-Website">Website Repo.</a>
+        <a href="https://github.com/siddharthan-pradeep07">My GitHub</a>
+        <a href="https://www.linkedin.com/in/siddharthan-pradeep-0202342a5/">LinkedIn</a>
+        <a href="https://hackclub.slack.com/team/U092G90G5FS">Hackclub Slack</a>
+        <a href="https://siddharthansp07.wixsite.com/createsometech">Printly 3D</a>
+        <a href="https://x.com/Siddharthan_07">X (twitter)</a>
+        <a href="https://youtube.com/@siddharthan.pradeep">Youtube</a>
+        <a href="https://makerworld.com/en/@siddharthan">Maker World</a>
+      </div>
+
     </div>
   </section>
 
@@ -422,6 +495,7 @@
   <section id="gallerySection" class="gallery-section" style="display:none;">
     <div class="projects-title">Gallery</div>
     <div class="gallery-list">
+
       <div class="gallery-group-card fade-in">
         <h3>Inplace – Close‑ups</h3>
         <p class="group-meta">Date: JAN 2025 · A compact Arduino‑based device with joystick and display.</p>
@@ -437,7 +511,33 @@
           </div>
         </div>
       </div>
-      <!-- other group cards ... -->
+
+      <div class="gallery-group-card fade-in">
+        <h3>Mobility Rover – Shots</h3>
+        <p class="group-meta">Date: SEP 2025 · Surveillance rover with line following and HOP system.</p>
+        <div class="gallery-group-images">
+          <div class="gallery-item">
+            <img src="mobility.jpg" alt="Mobility rover full view" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="mobility_close.jpg" alt="Mobility rover close view" class="gallery-img">
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-group-card fade-in">
+        <h3>Plasma Plant – Field</h3>
+        <p class="group-meta">Date: OCT 2025 · Plasma Plant rover testing on soil.</p>
+        <div class="gallery-group-images">
+          <div class="gallery-item">
+            <img src="plasma_photo.jpg" alt="Plasma Plant in field" class="gallery-img">
+          </div>
+          <div class="gallery-item">
+            <img src="plasma_close.jpg" alt="Plasma Plant close view" class="gallery-img">
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -445,13 +545,28 @@
   <section id="achievementsSection" class="achievements-section" style="display:none;">
     <div class="projects-title">Achievements</div>
     <div class="achievements-list">
+
       <div class="achievement-card fade-in">
-        <img src="trophy1.jpg" alt="Hackathon win" class="achievement-img">
+        <img src="trophy1.jpg" alt="MobilityX win" class="achievement-img">
         <h3><b>MobilityX 2.0 Hackathon</b></h3>
-        <p>Recognized for Mobility Rover, a step‑climbing surveillance bot with multiple modes of operation.</p>
+        <p>Recognized for Mobility Rover, a step‑climbing surveillance bot with multiple drive modes.</p>
         <p><b>Date:</b> SEP 2025</p>
       </div>
-      <!-- other achievements ... -->
+
+      <div class="achievement-card fade-in">
+        <img src="book_award.jpg" alt="Book featured" class="achievement-img">
+        <h3><b>The Genesis of Robotics – Featured</b></h3>
+        <p>Your robotics book highlighted on online platforms for making robotics easier for students.</p>
+        <p><b>Date:</b> FEB 2024</p>
+      </div>
+
+      <div class="achievement-card fade-in">
+        <img src="hackathon_uandme.jpg" alt="U & ME Hackathon" class="achievement-img">
+        <h3><b>U & ME Hackathon</b></h3>
+        <p>Built In‑convert, a sign‑language‑to‑speech device combining Teachable Machine and Arduino.</p>
+        <p><b>Date:</b> AUG 2024</p>
+      </div>
+
     </div>
   </section>
 
@@ -464,58 +579,54 @@
     aboutBtn.addEventListener("click", () => {
       aboutModal.style.display = "block";
     });
-
     closeBtn.addEventListener("click", () => {
       aboutModal.style.display = "none";
     });
-
     window.addEventListener("click", (e) => {
-      if (e.target === aboutModal) {
-        aboutModal.style.display = "none";
-      }
+      if (e.target === aboutModal) aboutModal.style.display = "none";
     });
 
-    // 3‑option mode toggle
+    // 3‑option segmented toggle – auto size slider to label
     const modeToggle = document.getElementById("modeToggle");
     const modeSlider = document.getElementById("modeSlider");
-    const modeOptions = document.querySelectorAll(".mode-option");
+    const modeOptions = Array.from(document.querySelectorAll(".mode-option"));
 
     const projectsSection = document.getElementById("projectsSection");
     const gallerySection = document.getElementById("gallerySection");
     const achievementsSection = document.getElementById("achievementsSection");
 
     function setMode(mode) {
-      // label active state
-      modeOptions.forEach(opt => {
-        opt.classList.toggle("active", opt.dataset.mode === mode);
-      });
+      const active = modeOptions.find(o => o.dataset.mode === mode);
+      if (!active) return;
 
-      // capsule position
-      if (mode === "projects") {
-        modeSlider.style.transform = "translateX(0)";
-        modeToggle.classList.remove("shift-text");
-      } else if (mode === "gallery") {
-        modeSlider.style.transform = "translateX(100%)";
-        modeToggle.classList.add("shift-text");
-      } else if (mode === "achievements") {
-        modeSlider.style.transform = "translateX(200%)";
-        modeToggle.classList.add("shift-text");
-      }
+      // activate label styles
+      modeOptions.forEach(o => o.classList.toggle("active", o === active));
 
-      // section visibility
+      // compute size and offset of active label
+      const toggleRect = modeToggle.getBoundingClientRect();
+      const rect = active.getBoundingClientRect();
+      const width = rect.width;
+      const left = rect.left - toggleRect.left;
+
+      modeSlider.style.width = width + "px";
+      modeSlider.style.transform = `translateX(${left}px)`;
+
+      // show correct section
       projectsSection.style.display = (mode === "projects") ? "block" : "none";
       gallerySection.style.display = (mode === "gallery") ? "block" : "none";
       achievementsSection.style.display = (mode === "achievements") ? "block" : "none";
     }
 
     modeOptions.forEach(opt => {
-      opt.addEventListener("click", () => {
-        setMode(opt.dataset.mode);
-      });
+      opt.addEventListener("click", () => setMode(opt.dataset.mode));
     });
 
-    // initial
-    setMode("projects");
+    // initial layout once page has rendered
+    window.addEventListener("load", () => setMode("projects"));
+    window.addEventListener("resize", () => {
+      const current = document.querySelector(".mode-option.active");
+      if (current) setMode(current.dataset.mode);
+    });
   </script>
 </body>
 </html>
