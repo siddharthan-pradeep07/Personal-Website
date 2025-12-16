@@ -46,7 +46,6 @@
       color: #fff;
     }
 
-    /* Close icon */
     .modal-content .close {
       position: absolute;
       top: 12px;
@@ -99,7 +98,8 @@
     }
 
     .projects-section,
-    .gallery-section {
+    .gallery-section,
+    .achievements-section {
       margin: 32px auto 40px auto;
       max-width: 980px;
       padding: 0 18px 40px 18px;
@@ -129,8 +129,17 @@
       justify-content: center;
     }
 
+    /* Achievements – simple grid of cards */
+    .achievements-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+    }
+
     .project-img,
-    .gallery-img {
+    .gallery-img,
+    .achievement-img {
       width: 100%;
       height: 200px;
       object-fit: cover;
@@ -140,7 +149,8 @@
       background: #111;
     }
 
-    .project-card {
+    .project-card,
+    .achievement-card {
       background: #050505;
       border-radius: 12px;
       box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
@@ -155,26 +165,30 @@
       cursor: pointer;
     }
 
-    .project-card:hover {
+    .project-card:hover,
+    .achievement-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(0,0,0,0.55);
       background: #0b0b0b;
     }
 
-    .project-card h3 {
+    .project-card h3,
+    .achievement-card h3 {
       font-size: 1rem;
       margin: 4px 0;
       color: #f5f5f5;
     }
 
-    .project-card p {
+    .project-card p,
+    .achievement-card p {
       font-size: 0.9rem;
       line-height: 1.4;
       color: #bababa;
       flex-grow: 1;
     }
 
-    .project-card a {
+    .project-card a,
+    .achievement-card a {
       display: inline-block;
       margin-top: 10px;
       margin-right: 6px;
@@ -188,17 +202,20 @@
       transition: background 0.17s, color 0.17s;
     }
 
-    .project-card a:hover {
+    .project-card a:hover,
+    .achievement-card a:hover {
       background: #97CDF4;
       color: #000;
     }
 
     @media (max-width: 800px) {
-      .projects-list {
+      .projects-list,
+      .achievements-list {
         flex-direction: column;
         align-items: stretch;
       }
-      .project-card {
+      .project-card,
+      .achievement-card {
         max-width: 100%;
       }
       main {
@@ -222,72 +239,71 @@
       }
     }
 
-    /* ===== Switch toggle styles ===== */
+    /* ===== 3‑option segmented toggle ===== */
 
-    .toggle-wrapper {
+    .mode-toggle-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 28px auto;
+    }
+
+    .mode-toggle {
+      position: relative;
+      background: #151515;
+      border-radius: 999px;
+      padding: 6px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin: 0 auto 28px auto;
-      transition: transform 0.25s ease;
+      gap: 6px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+      min-width: 260px;
     }
 
-    .toggle-wrapper.shift-left {
-      transform: translateX(-6px);
-    }
-
-    .toggle-label {
-      font-size: 0.9rem;
-      color: #f5f5f5;
-      transition: transform 0.25s ease;
-    }
-
-    .switch {
+    .mode-option {
       position: relative;
-      display: inline-block;
-      width: 52px;
-      height: 28px;
-    }
-
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-
-    .slider {
-      position: absolute;
+      z-index: 2;
+      flex: 1 1 0;
+      text-align: center;
+      font-size: 0.88rem;
+      padding: 8px 10px;
       cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #444;
-      transition: background-color 0.25s ease;
-      border-radius: 34px;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
+      color: #9c9c9c;
+      transition: color 0.25s ease;
+      user-select: none;
     }
 
-    .slider::before {
+    .mode-option.active {
+      color: #000;
+      font-weight: 600;
+    }
+
+    .mode-slider {
       position: absolute;
-      content: "";
-      height: 22px;
-      width: 22px;
-      left: 3px;
-      bottom: 3px;
-      background-color: #fff;
+      top: 4px;
+      bottom: 4px;
+      width: calc(33.33% - 8px);
+      border-radius: 999px;
+      background: #9dfbb8; /* default for projects */
+      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+      z-index: 1;
+      transition: transform 0.28s ease, background 0.28s ease;
+    }
+
+    /* positions: 0 = projects, 1 = gallery, 2 = achievements */
+    .mode-slider.gallery {
+      transform: translateX(100%);
+      background: #ffe9a4;
+    }
+
+    .mode-slider.achievements {
+      transform: translateX(200%);
+      background: #9dd8ff;
+    }
+
+    /* text small shift when not first option (like your previous "left shift") */
+    .mode-toggle.shift-text {
+      transform: translateX(-4px);
       transition: transform 0.25s ease;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    }
-
-    .switch input:checked + .slider {
-      background-color: #00d14a;
-    }
-
-    .switch input:checked + .slider::before {
-      transform: translateX(24px);
     }
 
     /* ===== Gallery group card styles ===== */
@@ -358,14 +374,14 @@
       </div>
     </div>
 
-    <!-- Switch Toggle -->
-    <div class="toggle-wrapper">
-      <span class="toggle-label toggle-label-left">Projects</span>
-      <label class="switch">
-        <input type="checkbox" id="viewToggle">
-        <span class="slider"></span>
-      </label>
-      <span class="toggle-label toggle-label-right">Gallery</span>
+    <!-- 3‑option segmented toggle -->
+    <div class="mode-toggle-wrapper">
+      <div class="mode-toggle" id="modeToggle">
+        <div class="mode-slider" id="modeSlider"></div>
+        <div class="mode-option active" data-mode="projects">Projects</div>
+        <div class="mode-option" data-mode="gallery">Gallery</div>
+        <div class="mode-option" data-mode="achievements">Achievements</div>
+      </div>
     </div>
   </main>
 
@@ -491,7 +507,6 @@
     <div class="projects-title">Gallery</div>
     <div class="gallery-list">
 
-      <!-- GROUP CARD 1 -->
       <div class="gallery-group-card fade-in">
         <h3>Inplace – Close‑ups</h3>
         <p class="group-meta">Date: JAN 2025 · A compact Arduino‑based device with joystick and display.</p>
@@ -508,7 +523,6 @@
         </div>
       </div>
 
-      <!-- GROUP CARD 2 -->
       <div class="gallery-group-card fade-in">
         <h3>Mobility Rover – Shots</h3>
         <p class="group-meta">Date: SEP 2025 · Surveillance rover with line following and HOP system.</p>
@@ -522,7 +536,6 @@
         </div>
       </div>
 
-      <!-- GROUP CARD 3 -->
       <div class="gallery-group-card fade-in">
         <h3>Plasma Plant – Field</h3>
         <p class="group-meta">Date: OCT 2025 · Plasma Plant rover testing on soil.</p>
@@ -534,6 +547,35 @@
             <img src="plasma_close.jpg" alt="Plasma Plant close view" class="gallery-img">
           </div>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievementsSection" class="achievements-section" style="display:none;">
+    <div class="projects-title">Achievements</div>
+    <div class="achievements-list">
+
+      <div class="achievement-card fade-in">
+        <img src="trophy1.jpg" alt="Hackathon win" class="achievement-img">
+        <h3><b>MobilityX 2.0 Hackathon</b></h3>
+        <p>Recognized for Mobility Rover, a step‑climbing surveillance bot with multiple modes of operation.</p>
+        <p><b>Date:</b> SEP 2025</p>
+      </div>
+
+      <div class="achievement-card fade-in">
+        <img src="book_award.jpg" alt="Book recognition" class="achievement-img">
+        <h3><b>The Genesis of Robotics – Featured</b></h3>
+        <p>Book featured on Bribooks for making robotics accessible to school students.</p>
+        <p><b>Date:</b> FEB 2024</p>
+      </div>
+
+      <div class="achievement-card fade-in">
+        <img src="hackathon_uandme.jpg" alt="U & ME Hackathon" class="achievement-img">
+        <h3><b>U & ME Hackathon</b></h3>
+        <p>Built In‑convert, a sign‑language‑to‑speech device using Teachable Machine and Arduino.</p>
+        <p><b>Date:</b> AUG 2024</p>
       </div>
 
     </div>
@@ -559,23 +601,51 @@
       }
     });
 
-    // Switch toggle logic
-    const viewToggle = document.getElementById("viewToggle");
+    // 3‑option mode toggle
+    const modeToggle = document.getElementById("modeToggle");
+    const modeSlider = document.getElementById("modeSlider");
+    const modeOptions = document.querySelectorAll(".mode-option");
+
     const projectsSection = document.getElementById("projectsSection");
     const gallerySection = document.getElementById("gallerySection");
-    const toggleWrapper = document.querySelector(".toggle-wrapper");
+    const achievementsSection = document.getElementById("achievementsSection");
 
-    viewToggle.addEventListener("change", () => {
-      if (viewToggle.checked) {
-        projectsSection.style.display = "none";
-        gallerySection.style.display = "block";
-        toggleWrapper.classList.add("shift-left");
-      } else {
-        projectsSection.style.display = "block";
-        gallerySection.style.display = "none";
-        toggleWrapper.classList.remove("shift-left");
+    function setMode(mode) {
+      modeOptions.forEach(opt => {
+        opt.classList.toggle("active", opt.dataset.mode === mode);
+      });
+
+      // slider position + color + slight shift
+      modeSlider.classList.remove("gallery", "achievements");
+      modeToggle.classList.remove("shift-text");
+
+      if (mode === "projects") {
+        modeSlider.style.transform = "translateX(0)";
+        modeSlider.style.background = "#9dfbb8";
+      } else if (mode === "gallery") {
+        modeSlider.classList.add("gallery");
+        modeSlider.style.background = "#ffe9a4";
+        modeToggle.classList.add("shift-text");
+      } else if (mode === "achievements") {
+        modeSlider.classList.add("achievements");
+        modeSlider.style.background = "#9dd8ff";
+        modeToggle.classList.add("shift-text");
       }
+
+      // show / hide sections
+      projectsSection.style.display = (mode === "projects") ? "block" : "none";
+      gallerySection.style.display = (mode === "gallery") ? "block" : "none";
+      achievementsSection.style.display = (mode === "achievements") ? "block" : "none";
+    }
+
+    modeOptions.forEach(opt => {
+      opt.addEventListener("click", () => {
+        setMode(opt.dataset.mode);
+      });
     });
+
+    // default
+    setMode("projects");
   </script>
 </body>
 </html>
