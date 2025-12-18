@@ -260,46 +260,6 @@
       transition: transform 0.28s ease, width 0.28s ease;
     }
 
-    /* ===== Gallery group card styles ===== */
-    .gallery-group-card {
-      background: #050505;
-      border-radius: 12px;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
-      padding: 16px 14px 18px 14px;
-      margin: 0 auto 22px auto;
-      max-width: 900px;
-    }
-    .gallery-group-card h3 {
-      margin: 0 0 4px 0;
-      font-size: 1rem;
-      color: #f5f5f5;
-    }
-    .group-meta {
-      margin: 0 0 12px 0;
-      font-size: 0.85rem;
-      color: #b0b0b0;
-    }
-    .gallery-group-images {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .gallery-group-images .gallery-item {
-      flex: 1 1 120px;
-      min-width: 110px;
-      max-width: 150px;
-      padding: 0;
-      background: transparent;
-      box-shadow: none;
-      cursor: default;
-    }
-    .gallery-group-images .gallery-img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 0;
-      background: #111;
-    }
   </style>
 </head>
 <body>
@@ -470,56 +430,6 @@
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="gallerySection" class="gallery-section" style="display:none;">
-    <div class="projects-title">Gallery</div>
-    <div class="gallery-list">
-
-      <div class="gallery-group-card fade-in">
-        <h3>Inplace – Close‑ups</h3>
-        <p class="group-meta">Date: JAN 2025 · A compact Arduino‑based device with joystick and display.</p>
-        <div class="gallery-group-images">
-          <div class="gallery-item">
-            <img src="IMG_20250126_180313.jpg" alt="Inplace front view" class="gallery-img">
-          </div>
-          <div class="gallery-item">
-            <img src="inplace_side.jpg" alt="Inplace side view" class="gallery-img">
-          </div>
-          <div class="gallery-item">
-            <img src="inplace_back.jpg" alt="Inplace back view" class="gallery-img">
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-group-card fade-in">
-        <h3>Mobility Rover – Shots</h3>
-        <p class="group-meta">Date: SEP 2025 · Surveillance rover with line following and HOP system.</p>
-        <div class="gallery-group-images">
-          <div class="gallery-item">
-            <img src="mobility.jpg" alt="Mobility rover full view" class="gallery-img">
-          </div>
-          <div class="gallery-item">
-            <img src="mobility_close.jpg" alt="Mobility rover close view" class="gallery-img">
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-group-card fade-in">
-        <h3>Plasma Plant – Field</h3>
-        <p class="group-meta">Date: OCT 2025 · Plasma Plant rover testing on soil.</p>
-        <div class="gallery-group-images">
-          <div class="gallery-item">
-            <img src="plasma_photo.jpg" alt="Plasma Plant in field" class="gallery-img">
-          </div>
-          <div class="gallery-item">
-            <img src="plasma_close.jpg" alt="Plasma Plant close view" class="gallery-img">
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- Achievements Section -->
   <section id="achievementsSection" class="achievements-section" style="display:none;">
     <div class="projects-title">Achievements</div>
@@ -571,7 +481,6 @@
     const modeOptions = Array.from(document.querySelectorAll(".mode-option"));
 
     const projectsSection = document.getElementById("projectsSection");
-    const gallerySection = document.getElementById("gallerySection");
     const achievementsSection = document.getElementById("achievementsSection");
 
     function setMode(mode) {
