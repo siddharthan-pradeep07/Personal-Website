@@ -20,7 +20,7 @@
       background-color: #92fcf9;
     }
 
-    /* Modal overlay */
+    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -216,7 +216,7 @@
       to { opacity: 1; transform: none; }
     }
 
-    /* ===== 3‑option segmented toggle (white capsule + multicolor border) ===== */
+    /* ===== 3‑option segmented toggle (plain white capsule) ===== */
     .mode-toggle-wrapper {
       display: flex;
       justify-content: center;
@@ -255,48 +255,9 @@
       bottom: 6px;
       left: 6px;
       border-radius: 999px;
-      background: #000;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.28s ease, width 0.28s ease;
-    }
-    /* inner white capsule with static multicolor border */
-    .mode-slider-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      border-radius: inherit;
-      background: #fff;
-      padding: 1px;           /* space for border look */
-    }
-    .mode-slider-inner::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 2px;
-      background: conic-gradient(
-        #00ff9d,
-        #00d2ff,
-        #ff00ff,
-        #ffcc00,
-        #00ff9d
-      );
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-    }
-
-    /* content inside slider (fully transparent, we just need shape/border) */
-    .mode-slider-inner span {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: inherit;
       background: #ffffff;
+      z-index: 1;
+      transition: transform 0.28s ease, width 0.28s ease;
     }
 
     /* ===== Gallery group card styles ===== */
@@ -364,9 +325,7 @@
     <!-- 3‑option segmented toggle -->
     <div class="mode-toggle-wrapper">
       <div class="mode-toggle" id="modeToggle">
-        <div class="mode-slider" id="modeSlider">
-          <div class="mode-slider-inner"><span></span></div>
-        </div>
+        <div class="mode-slider" id="modeSlider"></div>
         <div class="mode-option active" data-mode="projects">Projects</div>
         <div class="mode-option" data-mode="gallery">Gallery</div>
         <div class="mode-option" data-mode="achievements">Achievements</div>
@@ -390,7 +349,7 @@
       <div class="project-card fade-in">
         <img src="printly_home2.png" alt="Printly 3D" class="project-img">
         <h3><b>Printly 3D</b></h3><h3>Date: MAR 2024</h3>
-        <p>A 3D printing service website made using Wix that is easy to use and interactive.</p>
+        <p>A 3D Printing service-based website made using Wix that is easy to use and very interactive. You could access 3D models and order it effortlessly.</p>
         <a href="https://siddharthansp07.wixsite.com/createsometech">Website</a>
       </div>
 
@@ -399,22 +358,22 @@
           <source src="VID_20240204_131316(1).mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h3><b>A Model Rocket | Square V1</b></h3><h3>Date: FEB 2024</h3>
-        <p>A model rocket using a KNO3–sugar engine, PVC body tube, and bottle nose cone. The parachute failed to eject.</p>
+        <h3><b>A Model Rocket | Sqare V1</b></h3><h3>Date: FEB 2024</h3>
+        <p>A model rocket that has an engine made of potassium nitrate and sugar, a PVC pipe as the body tube, and a water bottle as the nose cone. (It failed to eject the parachute)</p>
         <a href="https://youtu.be/hPeRlU1h9WI">View launch video</a>
       </div>
 
       <div class="project-card fade-in">
         <img src="Screenshot 2025-12-06 073424.png" alt="Bytes AI" class="project-img">
         <h3><b>Bytes AI🍪</b></h3><h3>Date: NOV 2025</h3>
-        <p>An AI search engine that uses the Serper AI API to search the web and summarize results.</p>
+        <p>An AI search engine that combines the power of a search engine and AI. It searches the web and provides appropriate results using the Serper AI API.</p>
         <a href="https://siddharthan-pradeep07.github.io/Bytes/">Try the AI</a>
       </div>
 
       <div class="project-card fade-in">
         <img src="mobility.jpg" alt="Mobility Rover" class="project-img">
         <h3><b>Mobility Rover</b></h3><h3>Date: SEP 2025</h3>
-        <p>A four‑wheeled surveillance rover with line following, obstacle avoiding, Bluetooth, and a HOP system for steps.</p>
+        <p>A four-wheeled surveillance rover with line following, obstacle avoiding, Bluetooth, and "HOP" system for climbing steps.</p>
         <a href="https://mobilityx.netlify.app/">MobilityX 2.O Hackathon</a>
         <a href="https://github.com/siddharthan-pradeep07/mobility">Git Repo.</a>
       </div>
@@ -422,7 +381,7 @@
       <div class="project-card fade-in">
         <img src="plasma_photo.jpg" alt="Plasma Plant" class="project-img">
         <h3><b>Plasma Plant</b></h3><h3>Date: OCT 2025</h3>
-        <p>An innovative farming rover that detects soil, suggests seeds, sows, and waters automatically until the land is covered.</p>
+        <p>An innovative farming rover which detects the soil, suggests the best suitable seed, sows the seed, and waters it. Stops automatically when the land is covered.</p>
         <a href="https://siddharthan-pradeep07.github.io/Plasma_plant/">Research paper</a>
         <a href="https://youtube.com/shorts/KFvk7Cw4Y6I?si=jebCzLum02H8UwJs">Demo video</a>
       </div>
@@ -430,7 +389,7 @@
       <div class="project-card fade-in">
         <img src="rocket-flight-website.jpg" alt="Rocket flight viewer" class="project-img">
         <h3><b>Rocket flight graph convertor</b></h3><h3>Date: DEC 2025</h3>
-        <p>Reads 3‑axis accelerometer CSV data and renders a virtual flight graph plus a stability percentage.</p>
+        <p>Converts the reading of an 3 axis accelometer (in .CSV file format) to a virtual graph that shows the x, y and z values. It also shows the overall stability of rocket in percentage</p>
         <a href="https://siddharthan-pradeep07.github.io/rocket-flight-viewer/">View project</a>
         <a href="https://youtu.be/JyFkoDXhUoo?si=samBCfePgeT9uBVh">Demo video</a>
       </div>
@@ -441,37 +400,37 @@
           Your browser does not support the video tag.
         </video>
         <h3><b>My first arduino project</b></h3><h3>Date: JUL 2022</h3>
-        <p>An obstacle‑avoiding car using Arduino, L293D shield, DC motors, servo, and ultrasonic sensor.</p>
+        <p>An Obstacle avoiding car, made using Arduino, L293D motor driver shield, 4x wheels and motors, a servo and an ultrasonic sensor.</p>
         <a href="https://youtube.com/shorts/aC0jvXhVDTI?feature=share">My Demo video</a>
         <a href="https://youtu.be/1n_KjpMfVT0?si=aCX_CtinFFTKFr3E">Reference video</a>
       </div>
 
       <div class="project-card fade-in">
-        <img src="inconvert.jpg" alt="In‑convert" class="project-img">
+        <img src="inconvert.jpg" alt="In-convert" class="project-img">
         <h3><b>In-convert</b></h3><h3>Date: AUG 2024</h3>
         <p>A device that converts sign language to audible speech and text using Google Teachable Machine.</p>
-        <a href="https://unstop.com/hackathons/u-me-hackathon-edutantrs-tech-fest-edutantr-1512410">U & ME Hackathon</a>
+        <a href="https://unstop.com/hackathons/u-me-hackathon-edutantrs-tech-fest-edutantr-1512410">U & ME Hackthon</a>
         <a href="https://www.youtube.com/watch?v=R6OFr4GEzUE">View Video</a>
       </div>
 
       <div class="project-card fade-in">
         <img src="femto11.png" alt="Femto game" class="project-img">
         <h3><b>Femto-The hen</b></h3><h3>Date: JUN 2025</h3>
-        <p>A Sprig JavaScript platformer where you save a hen from enemies and fire while collecting coins and diamonds.</p>
+        <p>A platformer game made using "sprig" (JavaScript) based on a Hen named "Femto". The objective is to save the hen from enemies and fire, collecting coins and diamonds to help you.</p>
         <a href="https://github.com/hackclub/sprig/pull/3172">GitHub repo.</a>
       </div>
 
       <div class="project-card fade-in">
         <img src="pweb.jpg" alt="Extroxity" class="project-img">
         <h3><b>Extroxity</b></h3><h3>Date: JUN 2025</h3>
-        <p>“The LEGO of Robotics” – inter‑connectable servo‑based segments forming a snake‑like mechanism.</p>
+        <p>"The LEGO of Robotics" (I call it so.) A connectable mechanism made using servos that are interconnected to form a snake-like pattern.</p>
         <a href="#"><i><b>Upcoming!</b></i></a>
       </div>
 
       <div class="project-card fade-in">
-        <img src="bookrobo6.png" alt="Genesis of robotics book" class="project-img">
+        <img src="bookrobo6.png" alt="Genesis of robotics" class="project-img">
         <h3><b>The Genesis of robotics</b></h3><h3>Date: FEB 2024</h3>
-        <p>A beginner‑friendly robotics book written by you for curious readers.</p>
+        <p>The book written by me called the <b>"GENESIS OF ROBOTICS"</b>. A must-read for people curious about robotics!</p>
         <a href="https://www.bribooks.com/bookstore/the-genesis-of-robotics">View Book</a>
       </div>
 
@@ -586,7 +545,7 @@
       if (e.target === aboutModal) aboutModal.style.display = "none";
     });
 
-    // 3‑option segmented toggle – auto size slider to label
+    // 3‑option segmented toggle – capsule auto‑sizes and centers to label
     const modeToggle = document.getElementById("modeToggle");
     const modeSlider = document.getElementById("modeSlider");
     const modeOptions = Array.from(document.querySelectorAll(".mode-option"));
@@ -599,19 +558,20 @@
       const active = modeOptions.find(o => o.dataset.mode === mode);
       if (!active) return;
 
-      // activate label styles
+      // active label styles
       modeOptions.forEach(o => o.classList.toggle("active", o === active));
 
-      // compute size and offset of active label
+      // compute slider width + x offset so pill is centered under text
       const toggleRect = modeToggle.getBoundingClientRect();
       const rect = active.getBoundingClientRect();
       const width = rect.width;
-      const left = rect.left - toggleRect.left;
+      const centerOfText = rect.left + rect.width / 2;
+      const sliderLeft = centerOfText - toggleRect.left - width / 2;
 
       modeSlider.style.width = width + "px";
-      modeSlider.style.transform = `translateX(${left}px)`;
+      modeSlider.style.transform = `translateX(${sliderLeft}px)`;
 
-      // show correct section
+      // section visibility
       projectsSection.style.display = (mode === "projects") ? "block" : "none";
       gallerySection.style.display = (mode === "gallery") ? "block" : "none";
       achievementsSection.style.display = (mode === "achievements") ? "block" : "none";
@@ -621,7 +581,7 @@
       opt.addEventListener("click", () => setMode(opt.dataset.mode));
     });
 
-    // initial layout once page has rendered
+    // initial and on resize keep slider aligned
     window.addEventListener("load", () => setMode("projects"));
     window.addEventListener("resize", () => {
       const current = document.querySelector(".mode-option.active");
