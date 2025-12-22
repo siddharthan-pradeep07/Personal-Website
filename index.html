@@ -140,46 +140,38 @@
     .project-card {
       background: transparent;
       border-radius: 12px;
-
-      /* border must include width, style, and color */
-      border: 2px solid #000000;   /* black border */
-
+      border: 2px solid #000000;
       box-shadow: 0 0 0 1px rgba(84, 130, 173, 0.06);
       flex: 1 1 260px;
       min-width: 240px;
       max-width: 280px;
       padding: 16px 14px 14px 14px;
-
-      /* margin needs units */
       margin: 10px;
-
       display: flex;
       flex-direction: column;
-      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
       cursor: pointer;
     }
 
-    .project-card:hover,
-    .achievement-card:hover {
-      transform: translateY(-3px);
+
+    .project-card:hover {
+      transform: scale(1.03) rotate(2deg);  /* bigger + slight tilt right */
       box-shadow: 0 1px 80px rgb(0, 255, 213);
       border: 2px solid #000000;
     }
-    .project-card h3,
-    .achievement-card h3 {
+
+    .project-card h3 {
       font-size: 1rem;
       margin: 4px 0;
       color: #f5f5f5;
     }
-    .project-card p,
-    .achievement-card p {
+    .project-card p {
       font-size: 0.9rem;
       line-height: 1.4;
       color: #ffffff;
       flex-grow: 1;
     }
-    .project-card a,
-    .achievement-card a {
+    .project-card a {
       display: inline-block;
       margin-top: 10px;
       margin-right: 6px;
@@ -192,20 +184,17 @@
       font-weight: 500;
       transition: background 0.17s, color 0.17s;
     }
-    .project-card a:hover,
-    .achievement-card a:hover {
+    .project-card a:hover {
       background: #2eecec;
       color: #000;
     }
 
     @media (max-width: 800px) {
-      .projects-list,
-      .achievements-list {
+      .projects-list{
         flex-direction: column;
         align-items: stretch;
       }
-      .project-card,
-      .achievement-card {
+      .project-card{
         max-width: 100%;
       }
       main {
