@@ -147,9 +147,34 @@
     .content-section { max-width: 980px; margin: 0 auto 60px; padding: 0 18px 40px; }
     .section-title {
       font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase; color: #7a80a0; margin-bottom: 28px;
+      text-transform: uppercase; color: #7a80a0; margin-bottom: 20px;
     }
     .cards-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+
+    /* ── Achievement filter tabs ── */
+    .ach-filter-bar {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 28px;
+    }
+    .ach-filter-btn {
+      padding: 7px 18px; font-size: 0.8rem; font-family: 'DM Sans', sans-serif;
+      font-weight: 500; cursor: pointer; border-radius: 999px;
+      border: 1px solid rgba(180,190,230,0.5);
+      background: rgba(255,255,255,0.6); backdrop-filter: blur(10px);
+      color: #5a6080;
+      transition: background 0.22s, border-color 0.22s, color 0.22s;
+      user-select: none;
+    }
+    .ach-filter-btn:hover {
+      background: rgba(255,255,255,0.85);
+      border-color: rgba(120,110,240,0.35);
+      color: #1a1a2e;
+    }
+    .ach-filter-btn.active {
+      background: #7b6cf0;
+      border-color: #7b6cf0;
+      color: #ffffff;
+    }
 
     /* ── Frosted project card ── */
     .project-card {
@@ -183,130 +208,7 @@
     }
     .project-card a:hover { background: rgba(120,110,240,0.18); color: #3020a0; border-color: rgba(120,110,240,0.5); }
 
-    /* ── Achievement folders — real folder shape ── */
-    .folders-grid {
-      display: flex; flex-wrap: wrap; gap: 28px; justify-content: center;
-      padding: 10px 0 30px;
-    }
-
-    .folder {
-      width: 220px;
-      cursor: pointer; user-select: none;
-      transition: transform 0.26s cubic-bezier(.2,.8,.3,1), filter 0.26s ease;
-      position: relative;
-      filter: drop-shadow(0 14px 32px rgba(100,80,220,0.32));
-    }
-    .folder:hover {
-      transform: translateY(-8px) scale(1.025);
-      filter: drop-shadow(0 24px 48px rgba(100,80,220,0.48));
-    }
-    .folder:active { transform: translateY(-2px) scale(0.99); }
-
-    .folder-tab {
-      height: 32px;
-      background: rgba(120, 100, 230, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: 10px 10px 0 0;
-      display: flex; align-items: center;
-      clip-path: polygon(0 0, 62% 0, 75% 100%, 100% 100%, 0 100%);
-      padding: 0 14px;
-      position: relative;
-    }
-    .folder-tab-label {
-      font-size: 0.78rem; font-weight: 700;
-      color: rgba(255,255,255,0.9);
-      letter-spacing: 0.04em; text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .folder-body {
-      background: rgba(140, 120, 245, 0.80);
-      backdrop-filter: blur(22px) saturate(2);
-      -webkit-backdrop-filter: blur(22px) saturate(2);
-      border-radius: 0 12px 18px 18px;
-      border: 1.5px solid rgba(200,190,255,0.35);
-      border-top: none;
-      overflow: hidden;
-      display: flex; flex-direction: column;
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.22),
-        inset 0 -1px 0 rgba(80,60,200,0.12);
-    }
-
-    .folder-paper {
-      margin: 14px 12px 0;
-      background: rgba(255,255,255,0.97);
-      border-radius: 10px 10px 0 0;
-      overflow: hidden;
-      min-height: 110px;
-    }
-    .folder-paper-row {
-      padding: 10px 14px;
-      font-size: 0.83rem; font-weight: 500;
-      color: #26263a;
-      border-bottom: 1px solid rgba(160,165,200,0.2);
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-      line-height: 1.3;
-    }
-    .folder-paper-row:first-child {
-      background: rgba(220,218,245,0.4);
-      border-radius: 10px 10px 0 0;
-    }
-    .folder-paper-row:last-child { border-bottom: none; }
-
-    .folder-footer { padding: 12px 16px 18px; }
-    .folder-footer-label {
-      font-size: 1.05rem; font-weight: 700;
-      color: #ffffff;
-      text-shadow: 0 1px 4px rgba(60,40,160,0.3);
-    }
-    .folder-footer-count {
-      font-size: 0.7rem; color: rgba(255,255,255,0.60);
-      margin-top: 3px; font-weight: 400;
-    }
-
-    /* ── Folder drill-down view ── */
-    #folder-drilldown {
-      display: none;
-      animation: fadeIn 0.3s ease forwards;
-    }
-    #folder-drilldown.show { display: block; }
-
-    .folder-drilldown-header {
-      display: flex; align-items: center; gap: 14px;
-      margin-bottom: 28px;
-    }
-    .back-btn {
-      display: flex; align-items: center; gap: 7px;
-      background: rgba(255,255,255,0.65);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(180,190,230,0.5);
-      border-radius: 999px;
-      padding: 7px 16px 7px 12px;
-      cursor: pointer;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.82rem; font-weight: 500;
-      color: #4a4a6a;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-    }
-    .back-btn:hover {
-      background: rgba(255,255,255,0.9);
-      border-color: rgba(120,110,240,0.4);
-      color: #1a1a2e;
-    }
-    .back-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
-
-    .folder-drilldown-title {
-      font-family: 'Abril Fatface', cursive;
-      font-size: 1.6rem; font-weight: 400;
-      color: #1a1a2e; letter-spacing: 0.01em;
-    }
-    .folder-drilldown-title span {
-      font-size: 1.4rem; margin-right: 8px;
-    }
-
-    /* Achievement cards inside drilldown — same as project-card but non-clickable */
+    /* ── Achievement cards ── */
     .ach-card {
       background: rgba(255,255,255,0.58);
       backdrop-filter: blur(20px) saturate(1.6);
@@ -324,9 +226,14 @@
       border-color: rgba(120,110,220,0.35); background: rgba(255,255,255,0.78);
     }
     .ach-card:nth-child(1) { animation-delay: 0.05s; }
-    .ach-card:nth-child(2) { animation-delay: 0.12s; }
-    .ach-card:nth-child(3) { animation-delay: 0.19s; }
-    .ach-card:nth-child(4) { animation-delay: 0.26s; }
+    .ach-card:nth-child(2) { animation-delay: 0.10s; }
+    .ach-card:nth-child(3) { animation-delay: 0.15s; }
+    .ach-card:nth-child(4) { animation-delay: 0.20s; }
+    .ach-card:nth-child(5) { animation-delay: 0.25s; }
+    .ach-card:nth-child(6) { animation-delay: 0.30s; }
+    .ach-card:nth-child(7) { animation-delay: 0.35s; }
+    .ach-card:nth-child(8) { animation-delay: 0.40s; }
+    .ach-card:nth-child(9) { animation-delay: 0.45s; }
 
     .ach-card-placeholder {
       width: 100%; height: 185px; border-radius: 10px;
@@ -350,6 +257,15 @@
     .ach-card h3 { font-size: 0.9rem; font-weight: 700; margin: 3px 0; color: #1a1a2e; }
     .ach-card .ach-date { font-size: 0.74rem; font-weight: 400; color: #7a80a0; margin-bottom: 6px; }
     .ach-card p  { font-size: 0.82rem; line-height: 1.55; color: #3a3a5a; flex-grow: 1; font-weight: 400; }
+
+    /* category label on card */
+    .ach-category-tag {
+      display: inline-block; font-size: 0.63rem; letter-spacing: 0.06em;
+      text-transform: uppercase; padding: 2px 8px; border-radius: 999px;
+      margin-bottom: 6px; font-weight: 600;
+      background: rgba(123,108,240,0.10); color: #5040c0;
+      border: 1px solid rgba(123,108,240,0.22);
+    }
 
     /* ── Certificate lightbox ── */
     #cert-lightbox {
@@ -486,8 +402,6 @@
     @media (max-width: 800px) {
       .cards-grid { flex-direction: column; align-items: stretch; }
       .project-card { max-width: 100%; }
-      .folders-grid { gap: 18px; }
-      .folder { width: 160px; }
       main { margin: 22px auto; }
     }
   </style>
@@ -681,87 +595,19 @@
 
   <!-- Achievements section -->
   <section id="achievementsSection" class="content-section" style="display:none;">
+    <div class="section-title">Achievements &amp; Certificates</div>
 
-    <!-- Folder picker view -->
-    <div id="folder-picker">
-      <div class="section-title">Achievements &amp; Certificates</div>
-      <div class="folders-grid">
-
-        <div class="folder" data-folder="hackathon">
-          <div class="folder-tab"><span class="folder-tab-label">Hackathons</span></div>
-          <div class="folder-body">
-            <div class="folder-paper">
-              <div class="folder-paper-row">MobilityX 2.0 Hackathon</div>
-              <div class="folder-paper-row">U &amp; ME Hackathon</div>
-              <div class="folder-paper-row">Plasma Plant Award</div>
-            </div>
-            <div class="folder-footer">
-              <div class="folder-footer-label">Hackathons</div>
-              <div class="folder-footer-count">3 achievements</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="folder" data-folder="science-expo">
-          <div class="folder-tab"><span class="folder-tab-label">Science Expo</span></div>
-          <div class="folder-body">
-            <div class="folder-paper">
-              <div class="folder-paper-row">Plasma Plant — Science Expo</div>
-              <div class="folder-paper-row">Mobility Rover Demo</div>
-            </div>
-            <div class="folder-footer">
-              <div class="folder-footer-label">Science Expo</div>
-              <div class="folder-footer-count">2 achievements</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="folder" data-folder="publications">
-          <div class="folder-tab"><span class="folder-tab-label">Publications</span></div>
-          <div class="folder-body">
-            <div class="folder-paper">
-              <div class="folder-paper-row">The Genesis of Robotics</div>
-              <div class="folder-paper-row">Hack Club Sprig — Featured</div>
-            </div>
-            <div class="folder-footer">
-              <div class="folder-footer-label">Publications</div>
-              <div class="folder-footer-count">2 achievements</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="folder" data-folder="competitions">
-          <div class="folder-tab"><span class="folder-tab-label">Competitions</span></div>
-          <div class="folder-body">
-            <div class="folder-paper">
-              <div class="folder-paper-row">Bosch Micro Mouse Competition</div>
-            </div>
-            <div class="folder-footer">
-              <div class="folder-footer-label">Competitions</div>
-              <div class="folder-footer-count">1 achievement</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+    <!-- Filter tab bar -->
+    <div class="ach-filter-bar" id="achFilterBar">
+      <button class="ach-filter-btn active" data-filter="all">All</button>
+      <button class="ach-filter-btn" data-filter="hackathon">Hackathons</button>
+      <button class="ach-filter-btn" data-filter="science-expo">Science Expo</button>
+      <button class="ach-filter-btn" data-filter="publications">Publications</button>
+      <button class="ach-filter-btn" data-filter="competitions">Competitions</button>
     </div>
 
-    <!-- Drilldown view (replaces folder picker) -->
-    <div id="folder-drilldown">
-      <div class="folder-drilldown-header">
-        <button class="back-btn" id="backBtn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-          All Folders
-        </button>
-        <div class="folder-drilldown-title">
-          <span id="drilldown-emoji"></span><span id="drilldown-name"></span>
-        </div>
-      </div>
-      <div class="cards-grid" id="drilldown-cards"></div>
-    </div>
-
+    <!-- Achievement cards grid -->
+    <div class="cards-grid" id="ach-cards-grid"></div>
   </section>
 
   <!-- Certificate lightbox -->
@@ -894,8 +740,7 @@
     modeSlider.style.transform = `translateX(${r.left + r.width/2 - tr.left - r.width/2}px)`;
     projectsSec.style.display     = mode === "projects"     ? "block" : "none";
     achievementsSec.style.display = mode === "achievements" ? "block" : "none";
-    // When switching to achievements, always show folder picker
-    if (mode === "achievements") showFolderPicker();
+    if (mode === "achievements") renderAchievements("all");
   }
   modeOptions.forEach(o => o.addEventListener("click", () => setMode(o.dataset.mode)));
   window.addEventListener("load",   () => setMode("projects"));
@@ -1006,71 +851,93 @@
     if (e.target === emailGameModal) emailGameModal.style.display = "none";
   });
 
-  // ── Folder data ──
-  const FOLDERS = {
-    "hackathon": {
-      name: "Hackathons", emoji: "🏆",
-      items: [
-        { badge: "🏆 1st Place", badgeClass: "badge-gold", title: "MobilityX 2.0 Hackathon", desc: "Recognised for Mobility Rover — a step-climbing surveillance bot with multiple drive modes.", date: "SEP 2025", cert: "", icon: "🤖" },
-        { badge: "🎖 Participant", badgeClass: "badge-silver", title: "U & ME Hackathon", desc: "Built In-convert — a sign-language-to-speech device combining Teachable Machine and Arduino.", date: "AUG 2024", cert: "", icon: "🤝" },
-        { badge: "🌱 Innovation", badgeClass: "badge-gold", title: "Plasma Plant Award", desc: "Farming rover that autonomously detects soil, sows seeds, and irrigates. Presented with research paper.", date: "OCT 2025", cert: "", icon: "🌱" },
-      ]
-    },
-    "science-expo": {
-      name: "Science Expo", emoji: "🔬",
-      items: [
-        { badge: "🌱 Innovator", badgeClass: "badge-gold", title: "Plasma Plant — Science Expo", desc: "Presented Plasma Plant farming rover at the regional science expo, awarded innovation recognition.", date: "OCT 2025", cert: "", icon: "🌿" },
-        { badge: "🤖 Exhibitor", badgeClass: "badge-silver", title: "Mobility Rover Demo", desc: "Demonstrated the Mobility Rover step-climbing system at a school science exposition.", date: "SEP 2025", cert: "", icon: "🚗" },
-      ]
-    },
-    "publications": {
-      name: "Publications", emoji: "📖",
-      items: [
-        { badge: "📖 Published", badgeClass: "badge-book", title: "The Genesis of Robotics", desc: "Robotics book highlighted on online platforms for making robotics accessible for students.", date: "FEB 2024", cert: "", icon: "📚" },
-        { badge: "🎮 Featured", badgeClass: "badge-book", title: "Hack Club Sprig — Game Featured", desc: "Femto-The Hen platformer was accepted and featured in the Hack Club Sprig gallery.", date: "JUN 2025", cert: "", icon: "🎮" },
-      ]
-    },
-    "competitions": {
-      name: "Competitions", emoji: "🤖",
-      items: [
-        { badge: "🤖 Competitor", badgeClass: "badge-silver", title: "Bosch Micro Mouse Competition", desc: "Competed with a maze-solving robot using ultrasonic sensing and custom navigation algorithms.", date: "APR 2024", cert: "", icon: "🏁" },
-      ]
-    },
-  };
+  // ── Achievement data ──
+  const ALL_ACHIEVEMENTS = [
+    
+    // Science Expo
+    { category: "science-expo", categoryLabel: "Science Expo",
+      badge: "1st place", badgeClass: "badge-gold",
+      title: "AGRI-university science expo 2024",
+      desc: "Made a line following robot, a model rocket, an incubator and (a house automation tool by my team-mate ASRIEL DEVAPRABHU)",
+      date: "FEB 2024", cert: "", icon: "🚗" },
 
-  // ── Folder picker / drilldown ──
-  const folderPicker    = $("folder-picker");
-  const folderDrilldown = $("folder-drilldown");
-  const drilldownCards  = $("drilldown-cards");
-  const drilldownName   = $("drilldown-name");
-  const drilldownEmoji  = $("drilldown-emoji");
+    { category: "science-expo", categoryLabel: "Science Expo",
+      badge: "2nd place", badgeClass: "badge-silver",
+      title: "school science expo 2022",
+      desc: "Made an obstacle avoiding car",
+      date: "JUL 2022", cert: "", icon: "🚗" },
 
-  function showFolderPicker() {
-    folderPicker.style.display = "block";
-    folderDrilldown.classList.remove("show");
-  }
+    { category: "science-expo", categoryLabel: "Science Expo",
+      badge: "2nd place", badgeClass: "badge-silver",
+      title: "SCIZEN 2023",
+      desc: "made a multi purpuse rover, an incubator and (a hydraulic crane by my team-mate EZRA JESAN)",
+      date: "FEB 2023", cert: "", icon: "🚗" },
+      
+    // Hackathons
+    { category: "hackathon", categoryLabel: "Hackathons",
+      badge: "🏆 3rd Place", badgeClass: "badge-gold",
+      title: "MobilityX 2.0 Hackathon - KPR institute of technology",
+      desc: "Recognised for Mobility Rover — a step-climbing surveillance bot with multiple drive modes.",
+      date: "SEP 2025", cert: "", icon: "🤖" },
 
-  function openFolder(key) {
-    const f = FOLDERS[key];
-    if (!f) return;
+    { category: "hackathon", categoryLabel: "Hackathons",
+      badge: "🏆 Special jury award", badgeClass: "badge-silver",
+      title: "U & ME Hackathon",
+      desc: "Built In-convert — a sign-language-to-speech device combining Teachable Machine and Arduino.",
+      date: "AUG 2024", cert: "", icon: "🤝" },
 
-    drilldownName.textContent  = f.name;
-    drilldownEmoji.textContent = f.emoji + " ";
-    drilldownCards.innerHTML   = "";
+    { category: "hackathon", categoryLabel: "Hackathons",
+      badge: "Participated", badgeClass: "badge-silver",
+      title: "open innovation hackthon @ Fiestaa'26 - KPR institute of technology",
+      desc: "Built an AIR quality measuring and warning device for people affected with asthma",
+      date: "FEB 2026", cert: "", icon: "🌱" },
 
-    f.items.forEach(item => {
+    
+    // Publications
+    { category: "publications", categoryLabel: "Publications",
+      badge: "📖 Published", badgeClass: "badge-book",
+      title: "The Genesis of Robotics",
+      desc: "Robotics book highlighted on online platforms for making robotics accessible for students.",
+      date: "FEB 2024", cert: "", icon: "📚" },
+
+    { category: "publications", categoryLabel: "Publications",
+      badge: "🎮 Featured", badgeClass: "badge-book",
+      title: "Hack Club Sprig — Game Featured",
+      desc: "Femto-The Hen platformer was accepted and featured in the Hack Club Sprig gallery.",
+      date: "JUN 2025", cert: "", icon: "🎮" },
+
+    // Competitions
+    { category: "competitions", categoryLabel: "Competitions",
+      badge: "🤖 Competitor", badgeClass: "badge-silver",
+      title: "Bosch Micro Mouse Competition",
+      desc: "Competed with a maze-solving robot using ultrasonic sensing and custom navigation algorithms.",
+      date: "APR 2024", cert: "", icon: "🏁" },
+  ];
+
+  // ── Render achievements with optional filter ──
+  function renderAchievements(filter) {
+    const grid = $("ach-cards-grid");
+    grid.innerHTML = "";
+
+    const items = filter === "all"
+      ? ALL_ACHIEVEMENTS
+      : ALL_ACHIEVEMENTS.filter(a => a.category === filter);
+
+    items.forEach((item, idx) => {
       const card = document.createElement("div");
       card.className = "ach-card";
+      card.style.animationDelay = (idx * 0.07) + "s";
       card.innerHTML = `
         ${item.cert
           ? `<img src="${item.cert}" alt="${item.title}">`
           : `<div class="ach-card-placeholder">${item.icon}</div>`}
         <span class="ach-badge ${item.badgeClass}">${item.badge}</span>
+        ${filter === "all" ? `<span class="ach-category-tag">${item.categoryLabel}</span>` : ""}
         <h3>${item.title}</h3>
         <div class="ach-date">${item.date}</div>
         <p>${item.desc}</p>`;
 
-      const certImg = card.querySelector("img:not(.ach-badge)");
+      const certImg = card.querySelector("img");
       if (certImg && item.cert) {
         certImg.style.cursor = "zoom-in";
         certImg.addEventListener("click", () => {
@@ -1078,26 +945,21 @@
           certLightbox.classList.add("show");
         });
       }
-      drilldownCards.appendChild(card);
+      grid.appendChild(card);
     });
-
-    folderPicker.style.display = "none";
-    folderDrilldown.classList.add("show");
-    // Scroll achievements section into view nicely
-    achievementsSec.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  // Folder click handlers
-  document.querySelectorAll(".folder[data-folder]").forEach(f => {
-    f.addEventListener("click", () => openFolder(f.dataset.folder));
+  // ── Filter bar click handlers ──
+  document.getElementById("achFilterBar").addEventListener("click", e => {
+    const btn = e.target.closest(".ach-filter-btn");
+    if (!btn) return;
+    document.querySelectorAll(".ach-filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderAchievements(btn.dataset.filter);
   });
 
-  // Back button
-  $("backBtn").addEventListener("click", showFolderPicker);
-
   // ── All cards (for terminal) ──
-  const allCards        = Array.from(document.querySelectorAll(".project-card[data-name]"));
-  const allAchievements = [];
+  const allCards = Array.from(document.querySelectorAll(".project-card[data-name]"));
 
   // ── Terminal commands ──
   const COMMANDS = {
