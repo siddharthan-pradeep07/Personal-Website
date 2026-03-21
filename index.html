@@ -47,7 +47,7 @@
     .about-btn {
       margin-top: 18px; padding: 8px 22px; font-size: 0.82rem;
       font-family: 'DM Sans', sans-serif;
-      background: rgba(255,255,255,0.6);
+      background: rgba(255, 255, 255, 0.37);
       color: #1a1a2e; border: 1px solid rgba(160,170,210,0.5);
       border-radius: 999px; cursor: pointer; backdrop-filter: blur(10px);
       transition: background 0.3s, border-color 0.3s;
@@ -410,8 +410,8 @@
 <body>
 
   <header>
-    <h1>Siddharthan™</h1>
-    <p>Passionate about machine learning, programming, Arduino, model rocketry, robotics, and 3D printing. Always exploring new horizons in technology.</p>
+    <h1>Siddharthan</h1>
+    <p>Passionate about machine learning, programming, Arduino, model rocketry, Raspberry Pi 5, robotics, and 3D printing. Always exploring new horizons in technology.</p>
     <button id="aboutMeBtn" class="about-btn">About Me</button>
   </header>
 
@@ -423,7 +423,7 @@
         <div class="about-photo"><img src="image_of_me.png" alt="Siddharthan"></div>
         <div class="about-text">
           <h2>About Me</h2>
-          <p>Hello, <b>I'm Siddharthan, a 14-year-old</b> who likes to create <i>awesome</i> things with his 3D printer, Raspberry Pi 5, Arduino, some unorganised electronics, HTML stuff, rocketry and some machine learning.</p>
+          <p>Hello, <b>I'm Siddharthan, a 15-year-old</b> who likes to create <i>awesome</i> things with his 3D printer, Raspberry Pi 5, Arduino, some unorganised electronics, HTML stuff, rocketry and some machine learning.</p>
         </div>
       </div>
     </div>
@@ -782,11 +782,11 @@
 
   const questions = [
     { q: "What language did I invent that has its own alphabet system?",
-      opts: ["Python dialect", "MOFL", "Esperanto Jr.", "ArduScript", "SKIP"], ans: 1 },
+      opts: ["Python dialect", "MOFL", "Esperanto Jr.", "ArduScript", "SKIP"], ans: 1},
     { q: "What was the name of my farming rover that sows seeds automatically?",
-      opts: ["Mobility Rover", "Micro Mouse", "Plasma Plant", "Inplace", "SKIP"], ans: 2 },
+      opts: ["Mobility Rover", "Micro Mouse", "Plasma Plant", "Inplace", "SKIP"], ans: 2},
     { q: "What book did I write for curious minds in robotics?",
-      opts: ["Robot Wars", "The Genesis of Robotics", "Arduino for Teens", "Circuit Dreams", "SKIP"], ans: 1 }
+      opts: ["Robot Wars", "The Genesis of Robotics", "Arduino for Teens", "Circuit Dreams", "SKIP"], ans: 1}
   ];
 
   let gameQ = 0, gameScore = 0;
@@ -890,7 +890,7 @@
       badge: "1st place", badgeClass: "badge-gold",
       title: "Ilampreneur 2026 - PSG college of arts and science - science expo",
       desc: "Made an Agricultural rover that detects soil, suggests seeds, sows them, and waters.",
-      date: "JAN 2026", cert: "", icon: "🌴" },
+      date: "JAN 2026", cert: "photos/", icon: "🌴" },
 
     { category: "science-expo", categoryLabel: "Science Expo",
       badge: "1st place", badgeClass: "badge-gold",
@@ -999,6 +999,19 @@
       title: "Bosch Micro Mouse Competition",
       desc: "Competed with a maze-solving robot using ultrasonic sensing and custom navigation algorithms.",
       date: "APR 2024", cert: "", icon: "🏁" },
+
+     //Languages
+    { category: "languages", categoryLabel: "Languages",
+      badge: "FCE - Certified | English", badgeClass: "badge-silver",
+      title: "English FCE Exam certification",
+      desc: "Proficient in English with a B2 level certification from Cambridge Assessment English.",
+      date: "FEB 2026", cert: "", icon: "🌍" },
+
+     { category: "languages", categoryLabel: "Languages",
+      badge: "German a1 level certification", badgeClass: "badge-silver",
+      title: "German A1 Level Exam certification",
+      desc: "Proficient in German with an A1 level certification.",
+      date: "FEB 2026", cert: "", icon: "⨝" },
   ];
 
   // ── Render achievements with optional filter 
