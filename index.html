@@ -16,7 +16,7 @@
       --dim:      #5a6070;
       --accent:   #7b6cf0;
       --green:    #3a9a5c;
-      --red:      #cc4444;
+      --red:      #ca3b3b;
       --yellow:   #b87a10;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +32,7 @@
     }
     header, main, section { position: relative; z-index: 1; }
 
-    /* ── Header ── */
+    /* ── Header ──  the main title*/
     header { text-align: center; padding: 52px 0 0; }
     header h1 {
       font-family: 'Abril Fatface', cursive;
@@ -106,7 +106,7 @@
     #game-feedback.bad { color: var(--red); }
     #game-progress { font-size: 0.72rem; color: #7a80a0; letter-spacing: 0.06em; margin-bottom: 14px; }
     #email-reveal {
-      display: none; background: rgba(120,110,240,0.08); border: 1px solid rgba(120,110,240,0.3);
+      display: none; background: rgba(38, 38, 46, 0.08); border: 1px solid rgba(120,110,240,0.3);
       border-radius: 10px; padding: 14px 18px; font-family: 'DM Mono', monospace;
       font-size: 0.88rem; color: #5040c0; letter-spacing: 0.04em; margin-top: 8px; font-weight: 500;
     }
@@ -448,7 +448,7 @@
       <div class="mode-toggle" id="modeToggle">
         <div class="mode-slider" id="modeSlider"></div>
         <div class="mode-option active" data-mode="projects">Projects</div>
-        <div class="mode-option" data-mode="achievements">Achievements</div>
+    <!--    <div class="mode-option" data-mode="achievements">Achievements</div>  -->
       </div>
     </div>
   </main>
@@ -461,7 +461,7 @@
       <div class="project-card fade-in" data-name="inplace">
         <img src="photos/inpace1.jpg" alt="Inplace" class="project-img">
         <h3>Inplace</h3><h3>Date: JAN 2025</h3>
-        <p>A small device with a display, joystick, and Arduino Nano used for handling the basic features.</p>
+        <p>A small device with an OLED display, joystick, and Arduino Nano used for handling the basic features.</p>
         <a href="https://youtu.be/LIcebMXgsrs?si=5d0TSSRax1CAOzih" target="_blank">View Video</a>
         <a href="https://github.com/siddharthan-pradeep07/Inplace" target="_blank">Git Repo.</a>
       </div>
@@ -469,7 +469,7 @@
       <div class="project-card fade-in" data-name="mouse v2">
         <img src="micro_mouse.jpeg" alt="mouse v2" class="project-img">
         <h3>Project ELI (micro mouse v2)</h3><h3>Date: FEB 2026</h3>
-        <p>Maze solving robot v2 made with esp32, TB6612FNG and N20 motors for a competition @ YUGAM KCT</p>
+        <p>Maze solving robot v2 made with esp32, TB6612FNG and N20 motors with an array of 4 ultrasonic sensors for a competition @ YUGAM KCT</p>
         <a href="https://youtu.be/_l8llNnqw2I?si=ZI1InRrYOA63juRK" target="_blank">View making video</a>
       </div>
 
@@ -478,14 +478,14 @@
           <source src="VID_20240204_131316(1).mp4" type="video/mp4">
         </video>
         <h3>A Model Rocket | Sqare V1</h3><h3>Date: FEB 2024</h3>
-        <p>A model rocket with an engine of potassium nitrate and sugar, PVC body tube, and water bottle nose cone.</p>
+        <p>A model rocket with an engine of potassium nitrate and sugar, PVC body tube, and water bottle nose cone. made using components available at home</p>
         <a href="https://youtu.be/hPeRlU1h9WI" target="_blank">View launch video</a>
       </div>
       
       <div class="project-card fade-in" data-name="air quality">
         <img src="photos/IMG_20260221_155709.jpg" alt="Air quality" class="project-img">
         <h3>Handheld Air quality monitor</h3><h3>Date: FEB 2025</h3>
-        <p>An air quality monitoring device made at fiestaa 26 open innovation hackathon (6-hour hackathon)</p>
+        <p>An air quality monitoring device made at fiestaa 26 open innovation hackathon (6-hour hackathon) which monitors the air quality and sends alert when the air is not good</p>
         <a href="https://youtube.com/shorts/filJm4oQkTE?feature=share" target="_blank">Demo video</a>
         <a href="https://kpriet.ac.in/fiestaa2026" target="_blank">Fiestaa 26</a>
       </div>
@@ -493,28 +493,28 @@
       <div class="project-card fade-in" data-name="micro mouse">
         <img src="photos/IMG_20240529_122741.jpg" alt="Micro Mouse" class="project-img">
         <h3>Micro Mouse</h3><h3>Date: APR 2024</h3>
-        <p>Maze solving robot for a competition at Bosch. Arduino UNO, L293D, N20 gear motors, 3x Ultrasonic sensors.</p>
+        <p>Maze solving robot for a competition at Bosch. Arduino UNO, L293D, N20 gear motors, 3x Ultrasonic sensors. (Left hand wall following rule)</p>
         <a href="https://youtu.be/44cpKiCLjds" target="_blank">View Road Map video</a>
       </div>
 
       <div class="project-card fade-in" data-name="printly 3d">
         <img src="photos/printly_home2.png" alt="Printly 3D" class="project-img">
         <h3>Printly 3D</h3><h3>Date: MAR 2024</h3>
-        <p>3D printing website, for everyone: just upload a 3D model and I'll print it and deliver it to you.</p>
+        <p>3D printing website, for everyone: just upload a 3D model and I'll print it and deliver it to you. the website looks cool, check it out!(view it in a bigger screen for the best experience)</p>
         <a href="https://siddharthansp07.wixsite.com/createsometech" target="_blank">Website</a>
       </div>
 
       <div class="project-card fade-in" data-name="bytes ai">
         <img src="photos/Screenshot 2025-12-06 073424.png" alt="Bytes AI" class="project-img">
         <h3>Bytes AI 🍪</h3><h3>Date: NOV 2025</h3>
-        <p>An AI search engine combining a search engine and AI, using the Serper AI API for web results.</p>
+        <p>An AI search engine combining a search engine and AI, using the Serper AI API for web results. it gives results without sponsoered results.</p>
         <a href="https://siddharthan-pradeep07.github.io/Bytes/" target="_blank">Try the AI</a>
       </div>
 
       <div class="project-card fade-in" data-name="mobility rover">
         <img src="photos/mobility.jpg" alt="Mobility Rover" class="project-img">
         <h3>Mobility Rover</h3><h3>Date: SEP 2025</h3>
-        <p>A four-wheeled surveillance rover with line following, obstacle avoiding, Bluetooth, and "HOP" step-climbing system.</p>
+        <p>A four-wheeled surveillance rover with line following, obstacle avoiding, Bluetooth, and "HOP" step-climbing system. Has an oled display.!!!</p>
         <a href="https://mobilityx.netlify.app/" target="_blank">MobilityX 2.0 Hackathon</a>
         <a href="https://github.com/siddharthan-pradeep07/mobility" target="_blank">Git Repo.</a>
       </div>
@@ -522,15 +522,15 @@
       <div class="project-card fade-in" data-name="plasma plant">
         <img src="photos/plasma_photo.jpg" alt="Plasma Plant" class="project-img">
         <h3>Plasma Plant</h3><h3>Date: OCT 2025</h3>
-        <p>Farming rover that detects soil, suggests seeds, sows them, and waters. Stops automatically when land is covered.</p>
-        <a href="https://siddharthan-pradeep07.github.io/Plasma_plant/" target="_blank">Research paper</a>
+        <p>Farming rover that detects the soil, suggests seeds, sows them, and waters. Stops automatically when land is covered. moves like a tractor, uses pre trained data to identify the soil.</p>
+        <a href="https://siddharthan-pradeep07.github.io/Plasma_plant/" target="_blank">Research paper {private project}</a>
         <a href="https://youtube.com/shorts/KFvk7Cw4Y6I?si=jebCzLum02H8UwJs" target="_blank">Demo video</a>
       </div>
 
       <div class="project-card fade-in" data-name="rocket flight">
         <img src="photos/20400.png" alt="Rocket flight viewer" class="project-img">
         <h3>Rocket Flight Graph Convertor</h3><h3>Date: DEC 2025</h3>
-        <p>Converts a 3-axis accelerometer .CSV to a virtual graph of X, Y, Z values plus overall rocket stability %.</p>
+        <p>Converts a 3-axis accelerometer .CSV to a virtual graph of X, Y, Z values plus overall rocket stability in %. used to calculate rocket performance metrics.</p>
         <a href="https://siddharthan-pradeep07.github.io/rocket-flight-viewer/" target="_blank">View project</a>
         <a href="https://youtu.be/JyFkoDXhUoo?si=samBCfePgeT9uBVh" target="_blank">Demo video</a>
       </div>
@@ -540,7 +540,7 @@
           <source src="hello.mp4" type="video/mp4">
         </video>
         <h3>My First Arduino Project</h3><h3>Date: AUG 2021</h3>
-        <p>Obstacle avoiding car using Arduino, L293D motor driver shield, 4x wheels and motors, servo and ultrasonic sensor.</p>
+        <p>Obstacle avoiding car using Arduino, L293D motor driver shield, 4x wheels and motors, servo and ultrasonic sensor. made when I was in 5th grade with my father.</p>
         <a href="https://youtube.com/shorts/S0OesHFoogQ?feature=share" target="_blank">Demo video</a>
         <a href="https://youtube.com/shorts/aC0jvXhVDTI?feature=share" target="_blank">Demo video 2</a>
       </div>
@@ -557,7 +557,7 @@
           <source src="VID_20221027_170136.mp4" type="video/mp4">
         </video>
         <h3>Chicken Egg Incubator</h3><h3>Date: OCT 2022</h3>
-        <p>Incubator using a thermostat module, 12V supply, fan, and tungsten bulb to maintain temperature.</p>
+        <p>Incubator using a thermostat module, 12V supply, fan, and tungsten bulb to maintain temperature. anyway the eggs didn't hatch</p>
         <a href="https://youtube.com/shorts/Wulc9Wj1ewc?feature=share" target="_blank">View video</a>
       </div>
     
@@ -565,8 +565,8 @@
       <div class="project-card fade-in" data-name="in-convert">
         <img src="photos/inconvert.jpg" alt="In-convert" class="project-img">
         <h3>In-convert</h3><h3>Date: AUG 2024</h3>
-        <p>Device that converts sign language to audible speech and text using Google Teachable Machine.</p>
-        <a href="https://unstop.com/hackathons/u-me-hackathon-edutantrs-tech-fest-edutantr-1512410" target="_blank">U &amp; ME Hackathon</a>
+        <p>An awesome device that converts sign language to audible speech and text using Google Teachable Machine.</p>
+        <a href="https://unstop.com/hackathons/u-me-hackathon-edutantrs-tech-fest-edutantr-1512410" target="_blank">U and ME Hackathon (made it for the second time there...)</a>
         <a href="https://www.youtube.com/watch?v=R6OFr4GEzUE" target="_blank">View Video</a>
       </div>
 
@@ -580,27 +580,27 @@
       <div class="project-card fade-in" data-name="femto">
         <img src="photos/Femto_game_thumbnail.png" alt="Femto game" class="project-img">
         <h3>Femto — The Hen</h3><h3>Date: JUN 2025</h3>
-        <p>Platformer game in Sprig (JavaScript) — save Femto the hen from enemies and fire by collecting coins and diamonds.</p>
+        <p>Platformer game in Sprig (JavaScript) — save Femto the hen from enemies and fire by collecting coins and diamonds. made for an hackclub event (sprig.hackclub.com)</p>
         <a href="https://github.com/hackclub/sprig/pull/3172" target="_blank">GitHub repo.</a>
       </div>
 
       <div class="project-card fade-in" data-name="extroxity">
         <img src="photos/extroxity.png" alt="Extroxity" class="project-img">
         <h3>Extroxity</h3><h3>Date: JUN 2025</h3>
-        <p>"The LEGO of Robotics" — connectable servo mechanism that forms a snake-like articulated pattern.</p>
-        <a href="#"><i>Upcoming!</i></a>
+        <p>"The LEGO of Robotics"-I call is so — A connectable servo mechanism that forms a snake-like articulated pattern.</p>
+        <a href="#"><i>Upcoming! In progress</i></a>
       </div>
 
       <div class="project-card fade-in" data-name="genesis">
         <img src="photos/bookrobo6.png" alt="Genesis of robotics" class="project-img">
         <h3>The Genesis of Robotics</h3><h3>Date: FEB 2024</h3>
-        <p>A book written by me — a must-read for people curious about robotics!</p>
+        <p>A book written by ME! — a must-read for people curious about robotics!</p>
         <a href="https://www.bribooks.com/bookstore/the-genesis-of-robotics" target="_blank">View Book</a>
       </div>
 
       <div class="project-card fade-in" data-name="contacts">
         <h3>Contacts &amp; Social Media</h3>
-        <p>Find me on these platforms, or use the terminal to open them directly by typing github, linkedin, youtube, or email.</p>
+        <p>Find me on these platforms, or use the terminal to open them directly by typing github, linkedin, youtube, or email.(sorry I am not on instagram)</p>
         <a href="https://github.com/siddharthan-pradeep07" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/siddharthan-pradeep-0202342a5/" target="_blank">LinkedIn</a>
         <a href="https://siddharthansp07.wixsite.com/createsometech" target="_blank">Printly 3D</a>
@@ -1004,7 +1004,7 @@
     { category: "languages", categoryLabel: "Languages",
       badge: "FCE - Certified | English", badgeClass: "badge-silver",
       title: "English FCE Exam certification",
-      desc: "Proficient in English with a B2 level certification from Cambridge Assessment English.",
+      desc: "Proficient in English with a certification from Cambridge Assessment English.",
       date: "FEB 2026", cert: "", icon: "🌍" },
 
      { category: "languages", categoryLabel: "Languages",
@@ -1014,7 +1014,7 @@
       date: "FEB 2026", cert: "", icon: "⨝" },
   ];
 
-  // ── Render achievements with optional filter 
+  // ── Render achievements with optional filter frieken shisse
   function renderAchievements(filter) {
     const grid = $("ach-cards-grid");
     grid.innerHTML = "";
@@ -1058,10 +1058,10 @@
     renderAchievements(btn.dataset.filter);
   });
 
-  // ── All cards (for terminal) ──
+  // ── All cards (for terminal) ── ig
   const allCards = Array.from(document.querySelectorAll(".project-card[data-name]"));
 
-  // ── Terminal commands ──
+  // ── Terminal commands ── that does not workand it has to be the worlds biggest world and the wotld is round that I know AN D THE WORLD IS THE GREATEST PLACE WE CAN EVER LIVE AS IT IS SO BIG THAT it is bigger that the mars hahaha jk ok btw elon musk has even more money and I am typing to just type something and make things work cuz I needs to earn hack club tickets and I 've already completed all the work and there is only a lit bit of thinmgs left in this website andI working on it i do not know what to do'
   const COMMANDS = {
     help: () => {
       tLog("── Navigation ──────────────────", "info");
