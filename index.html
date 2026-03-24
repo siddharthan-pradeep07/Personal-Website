@@ -178,7 +178,7 @@
 
     /* ── Frosted project card ── */
     .project-card {
-      background: rgba(255,255,255,0.58);
+      background: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(20px) saturate(1.6);
       -webkit-backdrop-filter: blur(20px) saturate(1.6);
       border-radius: 16px; border: 1px solid rgba(200,210,235,0.6);
@@ -189,8 +189,8 @@
       box-shadow: 0 4px 20px rgba(100,110,180,0.10);
     }
     .project-card:hover {
-      transform: translateY(-5px); box-shadow: 0 16px 40px rgba(100,110,200,0.2);
-      border-color: rgba(120,110,220,0.35); background: rgba(255,255,255,0.78);
+      transform: translateY(-5px); box-shadow: 0 16px 40px rgba(101, 109, 175, 0.2);
+      border-color: rgba(110, 220, 143, 0.35); background: rgba(255,255,255,0.78);
     }
     .project-img {
       width: 100%; height: 185px; object-fit: cover; border-radius: 10px;
@@ -1127,7 +1127,7 @@
               allCards.find(c => cmd.split(" ").some(w => w.length > 2 && c.dataset.name.includes(w)));
     if (m) { setMode("projects"); openProjectOverlay(m); tLog("Opened <b>" + m.dataset.name + "</b> ✓", "ok"); return; }
 
-    tLog('Unknown: "' + raw + '". Type <b>help</b>.', "err");
+    tLog('Wdym? wth is this --> "' + raw + '" type a valid command or type <b>help</b>.', "err");
   });
   </script>
 </body>
