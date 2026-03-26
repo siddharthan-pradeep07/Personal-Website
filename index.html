@@ -32,7 +32,7 @@
     }
     header, main, section { position: relative; z-index: 1; }
 
-    /* ── Header ── */
+    /*  Header  */
     header { text-align: center; padding: 52px 0 0; }
     header h1 {
       font-family: 'Abril Fatface', cursive;
@@ -56,7 +56,7 @@
     }
     .about-btn:hover { background: rgba(255,255,255,0.85); border-color: rgba(120,130,200,0.6); }
 
-    /* ── Frosted modal base ── */
+    /* Frosted modal base */
     .modal {
       display: none; position: fixed; inset: 0; z-index: 1200;
       background: rgba(180,190,220,0.45); overflow: auto; backdrop-filter: blur(8px);
@@ -82,7 +82,7 @@
     .about-text h2 { font-weight: 600; color: #1a1a2e; margin-bottom: 10px; font-size: 1.1rem; }
     .about-text p  { line-height: 1.65; font-weight: 400; font-size: 0.9rem; color: #3a3a5a; }
 
-    /* ── Email game modal ── */
+    /*  Email game modal */
     #email-game-modal .modal-content { max-width: 460px; text-align: center; }
     #email-game-modal h3 {
       font-family: 'Abril Fatface', cursive; font-size: 1.9rem;
@@ -120,10 +120,10 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── Main ── */
+    /* Main */
     main { max-width: 980px; margin: 32px auto; padding: 0 18px; }
 
-    /* ── Content section ── */
+    /* Content section */
     .content-section { max-width: 980px; margin: 0 auto 60px; padding: 0 18px 40px; }
     .section-title {
       font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em;
@@ -131,7 +131,7 @@
     }
     .cards-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 
-    /* ── Frosted project card ── */
+    /*Frosted project card the transperency is not the good  */
     .project-card {
       background: rgba(255, 255, 255, 0.5);
       backdrop-filter: blur(20px) saturate(1.6);
@@ -163,13 +163,13 @@
     }
     .project-card a:hover { background: rgba(120,110,240,0.18); color: #3020a0; border-color: rgba(120,110,240,0.5); }
 
-    /* ── Fade-in ── */
+    /*  Fade-in html.com instruction */
     .fade-in { opacity: 0; transform: translateY(14px); animation: fadeUp 0.8s ease forwards; }
     .fade-in:nth-child(2)  { animation-delay: .10s; }
     .fade-in:nth-child(3)  { animation-delay: .20s; }
     .fade-in:nth-child(4)  { animation-delay: .30s; }
 
-    /* ── "Open terminal" capsule ── */
+    /*  "Open terminal" capsule this happens when the red dot is clicked*/
     #terminal-launcher {
       position: fixed; bottom: 22px; left: 22px; z-index: 1000;
       display: none; align-items: center; gap: 8px;
@@ -195,7 +195,7 @@
     #terminal-open-btn .mini-dot.y { background: #eec867; }
     #terminal-open-btn .mini-dot.g { background: #6dca6d; }
 
-    /* ── Frosted terminal ── */
+    /*Frosted terminal mac os style */
     #terminal {
       position: fixed; bottom: 22px; left: 22px; width: 310px;
       background: rgba(20,18,30,0.90);
@@ -239,7 +239,7 @@
     }
     #terminal-input::placeholder { color: rgba(180,185,220,0.35); }
 
-    /* ── Project overlay ── */
+    /* Project overlay */
     #project-overlay {
       display: none; position: fixed; inset: 0; z-index: 1100;
       background: rgba(180,190,220,0.5); backdrop-filter: blur(10px);
@@ -275,7 +275,7 @@
     }
     #overlay-links a:hover { background: rgba(120,110,240,0.18); color: #3020a0; border-color: rgba(120,110,240,0.5); }
 
-    /* ── Responsive ── */
+    /*  Responsiveness all sorts of that */
     @media (max-width: 700px) {
       header h1 { font-size: 2.8rem; }
       .modal-content { width: 92%; margin: 14% auto; padding: 18px; }
@@ -298,7 +298,7 @@
     <button id="aboutMeBtn" class="about-btn">About Me</button>
   </header>
 
-  <!-- About modal -->
+  <!-- About -->
   <div id="aboutMeModal" class="modal">
     <div class="modal-content">
       <button class="close">&times;</button>
@@ -312,7 +312,7 @@
     </div>
   </div>
 
-  <!-- Email game modal -->
+  <!-- Email game -->
   <div id="email-game-modal" class="modal">
     <div class="modal-content">
       <button class="close">&times;</button>
@@ -577,7 +577,7 @@
     setTimeout(() => { termLog.scrollTop = termLog.scrollHeight; }, 320);
   });
 
-  // ── Terminal log ──
+  //  Terminal log </>
   function tLog(html, cls) {
     const d = document.createElement("div");
     d.className = "t-line" + (cls ? " " + cls : "");
@@ -588,12 +588,12 @@
 
   function openURL(url) { window.open(url, "_blank", "noopener"); }
 
-  // ── About modal ──
+  //  About modal </>
   const aboutModal = $("aboutMeModal");
   $("aboutMeBtn").addEventListener("click", () => aboutModal.style.display = "block");
   aboutModal.querySelector(".close").addEventListener("click", () => aboutModal.style.display = "none");
 
-  // ── Email game ──
+  // </> Email game </>
   const emailGameModal = $("email-game-modal");
   emailGameModal.querySelector(".close").addEventListener("click", () => { emailGameModal.style.display = "none"; });
 
@@ -655,7 +655,7 @@
 
   $("emailGameTrigger").addEventListener("click", e => { e.preventDefault(); openEmailGame(); });
 
-  // ── Project overlay ──
+  // </>
   const overlay    = $("project-overlay");
   const oClose     = $("overlay-close");
   const oMediaWrap = $("overlay-media-wrap");
@@ -693,10 +693,10 @@
     if (e.target === emailGameModal) emailGameModal.style.display = "none";
   });
 
-  // ── All cards (for terminal) ──
+  //</> All cards (for terminal) 
   const allCards = Array.from(document.querySelectorAll(".project-card[data-name]"));
 
-  // ── Terminal commands ──
+  // not all the commands are added still yet to add
   const COMMANDS = {
     help: () => {
       tLog("── Navigation ──────────────────", "info");
@@ -762,3 +762,4 @@
   </script>
 </body>
 </html>
+<!-- that's all still improvimg this awesome website -->
