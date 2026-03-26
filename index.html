@@ -32,7 +32,7 @@
     }
     header, main, section { position: relative; z-index: 1; }
 
-    /* ── Header ──  the main title*/
+    /* ── Header ── */
     header { text-align: center; padding: 52px 0 0; }
     header h1 {
       font-family: 'Abril Fatface', cursive;
@@ -123,58 +123,13 @@
     /* ── Main ── */
     main { max-width: 980px; margin: 32px auto; padding: 0 18px; }
 
-    /* ── Section toggle ── */
-    .mode-toggle-wrapper { display: flex; justify-content: center; margin-bottom: 34px; }
-    .mode-toggle {
-      position: relative; background: rgba(255,255,255,0.6); backdrop-filter: blur(12px);
-      border: 1px solid rgba(180,190,230,0.5); border-radius: 999px;
-      padding: 5px; display: inline-flex; align-items: center; gap: 4px;
-    }
-    .mode-option {
-      position: relative; z-index: 2; font-size: 0.82rem;
-      font-family: 'DM Sans', sans-serif; padding: 7px 22px;
-      cursor: pointer; color: #5a6080; transition: color 0.3s;
-      user-select: none; white-space: nowrap; font-weight: 500;
-    }
-    .mode-option.active { color: #ffffff; font-weight: 600; }
-    .mode-slider {
-      position: absolute; top: 5px; bottom: 5px; left: 5px;
-      border-radius: 999px; background: #7b6cf0; z-index: 1;
-      transition: transform 0.32s cubic-bezier(.4,0,.2,1), width 0.32s cubic-bezier(.4,0,.2,1);
-    }
-
-    /* ── Content section shared ── */
+    /* ── Content section ── */
     .content-section { max-width: 980px; margin: 0 auto 60px; padding: 0 18px 40px; }
     .section-title {
       font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em;
       text-transform: uppercase; color: #7a80a0; margin-bottom: 20px;
     }
     .cards-grid { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
-
-    /* ── Achievement filter tabs ── */
-    .ach-filter-bar {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin-bottom: 28px;
-    }
-    .ach-filter-btn {
-      padding: 7px 18px; font-size: 0.8rem; font-family: 'DM Sans', sans-serif;
-      font-weight: 500; cursor: pointer; border-radius: 999px;
-      border: 1px solid rgba(180,190,230,0.5);
-      background: rgba(255,255,255,0.6); backdrop-filter: blur(10px);
-      color: #5a6080;
-      transition: background 0.22s, border-color 0.22s, color 0.22s;
-      user-select: none;
-    }
-    .ach-filter-btn:hover {
-      background: rgba(255,255,255,0.85);
-      border-color: rgba(120,110,240,0.35);
-      color: #1a1a2e;
-    }
-    .ach-filter-btn.active {
-      background: #7b6cf0;
-      border-color: #7b6cf0;
-      color: #ffffff;
-    }
 
     /* ── Frosted project card ── */
     .project-card {
@@ -184,7 +139,7 @@
       border-radius: 16px; border: 1px solid rgba(200,210,235,0.6);
       flex: 1 1 255px; min-width: 235px; max-width: 275px;
       padding: 14px; margin: 5px; display: flex; flex-direction: column;
-      cursor: pointer;
+      cursor: grab;
       transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease, background 0.32s ease;
       box-shadow: 0 4px 20px rgba(100,110,180,0.10);
     }
@@ -207,78 +162,6 @@
       transition: background 0.25s, color 0.25s, border-color 0.25s;
     }
     .project-card a:hover { background: rgba(120,110,240,0.18); color: #3020a0; border-color: rgba(120,110,240,0.5); }
-
-    /* ── Achievement cards ── */
-    .ach-card {
-      background: rgba(255,255,255,0.58);
-      backdrop-filter: blur(20px) saturate(1.6);
-      -webkit-backdrop-filter: blur(20px) saturate(1.6);
-      border-radius: 16px; border: 1px solid rgba(200,210,235,0.6);
-      flex: 1 1 255px; min-width: 235px; max-width: 275px;
-      padding: 14px; margin: 5px; display: flex; flex-direction: column;
-      box-shadow: 0 4px 20px rgba(100,110,180,0.10);
-      transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease, background 0.32s ease;
-      animation: fadeIn 0.4s ease forwards;
-      opacity: 0;
-    }
-    .ach-card:hover {
-      transform: translateY(-5px); box-shadow: 0 16px 40px rgba(100,110,200,0.2);
-      border-color: rgba(120,110,220,0.35); background: rgba(255,255,255,0.78);
-    }
-    .ach-card:nth-child(1) { animation-delay: 0.05s; }
-    .ach-card:nth-child(2) { animation-delay: 0.10s; }
-    .ach-card:nth-child(3) { animation-delay: 0.15s; }
-    .ach-card:nth-child(4) { animation-delay: 0.20s; }
-    .ach-card:nth-child(5) { animation-delay: 0.25s; }
-    .ach-card:nth-child(6) { animation-delay: 0.30s; }
-    .ach-card:nth-child(7) { animation-delay: 0.35s; }
-    .ach-card:nth-child(8) { animation-delay: 0.40s; }
-    .ach-card:nth-child(9) { animation-delay: 0.45s; }
-
-    .ach-card-placeholder {
-      width: 100%; height: 185px; border-radius: 10px;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, rgba(120,110,240,0.09), rgba(100,120,240,0.04));
-      display: flex; align-items: center; justify-content: center;
-      color: #9090bb; font-size: 2rem;
-    }
-    .ach-card img {
-      width: 100%; height: 185px; object-fit: cover; border-radius: 10px;
-      margin-bottom: 12px; display: block; opacity: 0.96;
-    }
-    .ach-badge {
-      display: inline-block; font-size: 0.67rem; letter-spacing: 0.08em;
-      text-transform: uppercase; padding: 3px 9px; border-radius: 999px;
-      margin-bottom: 7px; font-weight: 600;
-    }
-    .badge-gold   { background: rgba(200,160,20,0.14); color: #a07010; border: 1px solid rgba(200,160,20,0.3); }
-    .badge-silver { background: rgba(100,110,160,0.12); color: #505880; border: 1px solid rgba(100,110,160,0.25); }
-    .badge-bronze { background: rgba(147, 160, 100, 0.12); color: #668050; border: 1px solid rgba(160, 136, 100, 0.25); }
-    .badge-book   { background: rgba(40,150,90,0.12); color: #2a7a50; border: 1px solid rgba(40,150,90,0.25); }
-    .ach-card h3 { font-size: 0.9rem; font-weight: 700; margin: 3px 0; color: #1a1a2e; }
-    .ach-card .ach-date { font-size: 0.74rem; font-weight: 400; color: #7a80a0; margin-bottom: 6px; }
-    .ach-card p  { font-size: 0.82rem; line-height: 1.55; color: #3a3a5a; flex-grow: 1; font-weight: 400; }
-
-    /* category label on card */
-    .ach-category-tag {
-      display: inline-block; font-size: 0.63rem; letter-spacing: 0.06em;
-      text-transform: uppercase; padding: 2px 8px; border-radius: 999px;
-      margin-bottom: 6px; font-weight: 600;
-      background: rgba(123,108,240,0.10); color: #5040c0;
-      border: 1px solid rgba(123,108,240,0.22);
-    }
-
-    /* ── Certificate lightbox ── */
-    #cert-lightbox {
-      display: none; position: fixed; inset: 0; z-index: 1400;
-      background: rgba(8,7,6,0.9); backdrop-filter: blur(12px);
-      align-items: center; justify-content: center; cursor: zoom-out;
-    }
-    #cert-lightbox.show { display: flex; }
-    #cert-lightbox img {
-      max-width: 88vw; max-height: 88vh; border-radius: 12px;
-      box-shadow: 0 24px 80px rgba(0,0,0,0.7); animation: fadeUp 0.25s ease;
-    }
 
     /* ── Fade-in ── */
     .fade-in { opacity: 0; transform: translateY(14px); animation: fadeUp 0.8s ease forwards; }
@@ -443,18 +326,8 @@
     </div>
   </div>
 
-  <main>
-    <div class="mode-toggle-wrapper">
-      <div class="mode-toggle" id="modeToggle">
-        <div class="mode-slider" id="modeSlider"></div>
-        <div class="mode-option active" data-mode="projects">Projects</div>
-    <!--    <div class="mode-option" data-mode="achievements">Achievements</div>  -->
-      </div>
-    </div>
-  </main>
-
   <!-- Projects section -->
-  <section id="projectsSection" class="content-section">
+  <section id="projectsSection" class="content-section" style="margin-top: 32px;">
     <div class="section-title">Recent Projects</div>
     <div class="cards-grid">
 
@@ -465,7 +338,7 @@
         <a href="https://youtu.be/LIcebMXgsrs?si=5d0TSSRax1CAOzih" target="_blank">View Video</a>
         <a href="https://github.com/siddharthan-pradeep07/Inplace" target="_blank">Git Repo.</a>
       </div>
-  
+
       <div class="project-card fade-in" data-name="mouse v2">
         <img src="micro_mouse.jpeg" alt="mouse v2" class="project-img">
         <h3>Project ELI (micro mouse v2)</h3><h3>Date: FEB 2026</h3>
@@ -481,7 +354,7 @@
         <p>A model rocket with an engine of potassium nitrate and sugar, PVC body tube, and water bottle nose cone. made using components available at home</p>
         <a href="https://youtu.be/hPeRlU1h9WI" target="_blank">View launch video</a>
       </div>
-      
+
       <div class="project-card fade-in" data-name="air quality">
         <img src="photos/IMG_20260221_155709.jpg" alt="Air quality" class="project-img">
         <h3>Handheld Air quality monitor</h3><h3>Date: FEB 2025</h3>
@@ -560,7 +433,6 @@
         <p>Incubator using a thermostat module, 12V supply, fan, and tungsten bulb to maintain temperature. anyway the eggs didn't hatch</p>
         <a href="https://youtube.com/shorts/Wulc9Wj1ewc?feature=share" target="_blank">View video</a>
       </div>
-    
 
       <div class="project-card fade-in" data-name="in-convert">
         <img src="photos/inconvert.jpg" alt="In-convert" class="project-img">
@@ -610,33 +482,6 @@
 
     </div>
   </section>
-
-  <!-- Achievements section -->
-  <section id="achievementsSection" class="content-section" style="display:none;">
-    <div class="section-title">Achievements &amp; Certificates</div>
-
-    <!-- Filter tab bar -->
-    <div class="ach-filter-bar" id="achFilterBar">
-      <button class="ach-filter-btn active" data-filter="all">All</button>
-      <button class="ach-filter-btn" data-filter="hackathon">Hackathons</button>
-      <button class="ach-filter-btn" data-filter="science-expo">Science Expo</button>
-      <button class="ach-filter-btn" data-filter="publications">Publications</button>
-      <button class="ach-filter-btn" data-filter="competitions">Competitions</button>
-      <button class="ach-filter-btn" data-filter="olympiad">Olympiad</button>
-      <button class="ach-filter-btn" data-filter="karate">Karate</button>
-      <button class="ach-filter-btn" data-filter="creative-writing">Creative writing</button>
-      <button class="ach-filter-btn" data-filter="music">Music</button>
-      <button class="ach-filter-btn" data-filter="art">Art</button>
-      <button class="ach-filter-btn" data-filter="marathon">Marathon</button>
-      <button class="ach-filter-btn" data-filter="language">Language</button>
-    </div>
-
-    <!-- Achievement cards grid -->
-    <div class="cards-grid" id="ach-cards-grid"></div>
-  </section>
-
-  <!-- Certificate lightbox -->
-  <div id="cert-lightbox"><img id="cert-lightbox-img" src="" alt="Certificate"></div>
 
   <!-- Project overlay -->
   <div id="project-overlay">
@@ -748,34 +593,6 @@
   $("aboutMeBtn").addEventListener("click", () => aboutModal.style.display = "block");
   aboutModal.querySelector(".close").addEventListener("click", () => aboutModal.style.display = "none");
 
-  // ── Section toggle ──
-  const modeToggle      = $("modeToggle");
-  const modeSlider      = $("modeSlider");
-  const modeOptions     = Array.from(document.querySelectorAll(".mode-option"));
-  const projectsSec     = $("projectsSection");
-  const achievementsSec = $("achievementsSection");
-
-  function setMode(mode) {
-    const active = modeOptions.find(o => o.dataset.mode === mode);
-    if (!active) return;
-    modeOptions.forEach(o => o.classList.toggle("active", o === active));
-    const tr = modeToggle.getBoundingClientRect();
-    const r  = active.getBoundingClientRect();
-    modeSlider.style.width     = r.width + "px";
-    modeSlider.style.transform = `translateX(${r.left + r.width/2 - tr.left - r.width/2}px)`;
-    projectsSec.style.display     = mode === "projects"     ? "block" : "none";
-    achievementsSec.style.display = mode === "achievements" ? "block" : "none";
-    if (mode === "achievements") renderAchievements("all");
-  }
-  modeOptions.forEach(o => o.addEventListener("click", () => setMode(o.dataset.mode)));
-  window.addEventListener("load",   () => setMode("projects"));
-  window.addEventListener("resize", () => { const c = document.querySelector(".mode-option.active"); if (c) setMode(c.dataset.mode); });
-
-  // ── Certificate lightbox ──
-  const certLightbox    = $("cert-lightbox");
-  const certLightboxImg = $("cert-lightbox-img");
-  certLightbox.addEventListener("click", () => certLightbox.classList.remove("show"));
-
   // ── Email game ──
   const emailGameModal = $("email-game-modal");
   emailGameModal.querySelector(".close").addEventListener("click", () => { emailGameModal.style.display = "none"; });
@@ -876,197 +693,13 @@
     if (e.target === emailGameModal) emailGameModal.style.display = "none";
   });
 
-  // ── Achievement data ──
-  const ALL_ACHIEVEMENTS = [
-    
-    // Science Expo
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "1st place", badgeClass: "badge-gold",
-      title: "Science expo 2026 - Benglen Public school",
-      desc: "Made an Agricultural rover that detects soil, suggests seeds, sows them, and waters.",
-      date: "FEB 2026", cert: "photos/IMG_20260316_171736", icon: "🌴" },
-    
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "1st place", badgeClass: "badge-gold",
-      title: "Ilampreneur 2026 - PSG college of arts and science - science expo",
-      desc: "Made an Agricultural rover that detects soil, suggests seeds, sows them, and waters.",
-      date: "JAN 2026", cert: "photos/", icon: "🌴" },
-
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "1st place", badgeClass: "badge-gold",
-      title: "Talentrek 2025",
-      desc: "Made a device that converts sign language to text and speech (and a weather sattelite by my team-mate Kavin)",
-      date: "FEB 2025", cert: "photos/IMG_20260316_171410.jpg", icon: "🤘🏻" },
-
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "1st place", badgeClass: "badge-gold",
-      title: "Benglen Science expo 2025",
-      desc: "Made a device that converts sign language to text and speech",
-      date: "FEB 2025", cert: "photos/1000012107.jpg ", icon: "🤘🏻" },
-
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "1st place", badgeClass: "badge-gold",
-      title: "Kovai Vidyashram - Scientia 2025",
-      desc: "Made a device that converts sign language to text and speech (with my team-mate Kriday)",
-      date: "FEB 2025", cert: "photos/IMG_20260316_171427.jpg", icon: "🤘🏻" },
-    
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "1st place", badgeClass: "badge-gold",
-      title: "AGRI-university science   expo 2024",
-      desc: "Made a line following robot, a model rocket, an incubator and (a house automation tool by my team-mate Asriel devaprabhu)",
-      date: "FEB 2024", cert: "photos/1000012114.jpg", icon: "🚗" },
-
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "1st place", badgeClass: "badge-gold",
-      title: "Sarvavidhya fest - Robotics fest 2024",
-      desc: "Made a device that converts sign language to text and speech",
-      date: "NOV 2024", cert: "1000012116.jpg", icon: "🤘🏻" },
-
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "1st place", badgeClass: "badge-gold",
-      title: "School science expo 2024",
-      desc: "Made a line following robot, a model rocket, an incubator and (a house automation tool by my team-mate Asriel devaprabhu)",
-      date: "FEB 2024", cert: "photos/1000012118.jpg", icon: "🚗" },
- 
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "2nd place", badgeClass: "badge-silver",
-      title: "school science expo 2022",
-      desc: "Made an obstacle avoiding car with my team mates (Ezra jesan and Shri hari)",
-      date: "JUL 2022", cert: "photos/IMG_20260316_171027.jpg", icon: "🚗" },
-
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "2nd place", badgeClass: "badge-silver",
-      title: "SCIZEN 2023",
-      desc: "made a multi purpuse rover, an incubator and (a hydraulic crane by my team-mate Ezra jesan)",
-      date: "FEB 2023", cert: "photos/IMG_20260316_171137.jpg", icon: "🚗" },
-
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "3rd place", badgeClass: "badge-bronze",
-      title: "School science expo 2024",
-      desc: "Made an automatic plant watering system",
-      date: "SEP 2024", cert: "photos/IMG_20260316_171817.jpg", icon: "🌴" },
-
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "Participation", badgeClass: "badge-silver",
-      title: "Thulirum Vingani 2025- NEWS 7 Tamil",
-      desc: "Made an Agricultural rover that detects soil, suggests seeds, sows them, and waters.",
-      date: "OCT 2025", cert: "", icon: "🌴" },
-
-    { category: "science-expo", categoryLabel: "Science Expo",
-      badge: "4th place", badgeClass: "badge-silver",
-      title: "V @2047 - PSG college of pharmacy - science expo",
-      desc: "Made an Agricultural rover that detects soil, suggests seeds, sows them, and waters.",
-      date: "JAN 2026", cert: "", icon: "🌴" },
-
-
-    // Hackathons
-    { category: "hackathon", categoryLabel: "Hackathons",
-      badge: "🏆 3rd Place", badgeClass: "badge-bronze",
-      title: "MobilityX 2.0 Hackathon - KPR institute of technology",
-      desc: "Recognised for Mobility Rover — a step-climbing surveillance bot with multiple drive modes.",
-      date: "SEP 2025", cert: "", icon: "🤖" },
-
-    { category: "hackathon", categoryLabel: "Hackathons",
-      badge: "🏆 Special jury award", badgeClass: "badge-silver",
-      title: "U & ME Hackathon",
-      desc: "Built In-convert — a sign-language-to-speech device combining Teachable Machine and Arduino.",
-      date: "AUG 2024", cert: "", icon: "🤝" },
-
-    { category: "hackathon", categoryLabel: "Hackathons",
-      badge: "Participated", badgeClass: "badge-silver",
-      title: "open innovation hackthon @ Fiestaa'26 - KPR institute of technology",
-      desc: "Built an AIR quality measuring and warning device for people affected with asthma",
-      date: "FEB 2026", cert: "", icon: "🌱" },
-
-
-  
-    // Publications
-    { category: "publications", categoryLabel: "Publications",
-      badge: "📖 Published", badgeClass: "badge-book",
-      title: "The Genesis of Robotics",
-      desc: "Robotics book highlighted on online platforms for making robotics accessible for students.",
-      date: "FEB 2024", cert: "", icon: "📚" },
-
-    { category: "publications", categoryLabel: "Publications",
-      badge: "🎮 Featured", badgeClass: "badge-book",
-      title: "Hack Club Sprig — Game Featured",
-      desc: "Femto-The Hen platformer was accepted and featured in the Hack Club Sprig gallery.",
-      date: "JUN 2025", cert: "", icon: "🎮" },
-
-    // Competitions
-    { category: "competitions", categoryLabel: "Competitions",
-      badge: "🤖 Competitor", badgeClass: "badge-silver",
-      title: "Bosch Micro Mouse Competition",
-      desc: "Competed with a maze-solving robot using ultrasonic sensing and custom navigation algorithms.",
-      date: "APR 2024", cert: "", icon: "🏁" },
-
-     //Languages
-    { category: "languages", categoryLabel: "Languages",
-      badge: "FCE - Certified | English", badgeClass: "badge-silver",
-      title: "English FCE Exam certification",
-      desc: "Proficient in English with a certification from Cambridge Assessment English.",
-      date: "FEB 2026", cert: "", icon: "🌍" },
-
-     { category: "languages", categoryLabel: "Languages",
-      badge: "German a1 level certification", badgeClass: "badge-silver",
-      title: "German A1 Level Exam certification",
-      desc: "Proficient in German with an A1 level certification.",
-      date: "FEB 2026", cert: "", icon: "⨝" },
-  ];
-
-  // ── Render achievements with optional filter frieken shisse
-  function renderAchievements(filter) {
-    const grid = $("ach-cards-grid");
-    grid.innerHTML = "";
-
-    const items = filter === "all"
-      ? ALL_ACHIEVEMENTS
-      : ALL_ACHIEVEMENTS.filter(a => a.category === filter);
-
-    items.forEach((item, idx) => {
-      const card = document.createElement("div");
-      card.className = "ach-card";
-      card.style.animationDelay = (idx * 0.07) + "s";
-      card.innerHTML = `
-        ${item.cert
-          ? `<img src="${item.cert}" alt="${item.title}">`
-          : `<div class="ach-card-placeholder">${item.icon}</div>`}
-        <span class="ach-badge ${item.badgeClass}">${item.badge}</span>
-        ${filter === "all" ? `<span class="ach-category-tag">${item.categoryLabel}</span>` : ""}
-        <h3>${item.title}</h3>
-        <div class="ach-date">${item.date}</div>
-        <p>${item.desc}</p>`;
-
-      const certImg = card.querySelector("img");
-      if (certImg && item.cert) {
-        certImg.style.cursor = "zoom-in";
-        certImg.addEventListener("click", () => {
-          certLightboxImg.src = certImg.src;
-          certLightbox.classList.add("show");
-        });
-      }
-      grid.appendChild(card);
-    });
-  }
-
-  // ── Filter bar click handlers ──
-  document.getElementById("achFilterBar").addEventListener("click", e => {
-    const btn = e.target.closest(".ach-filter-btn");
-    if (!btn) return;
-    document.querySelectorAll(".ach-filter-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderAchievements(btn.dataset.filter);
-  });
-
-  // ── All cards (for terminal) ── ig
+  // ── All cards (for terminal) ──
   const allCards = Array.from(document.querySelectorAll(".project-card[data-name]"));
 
-  // ── Terminal commands ── that does not workand it has to be the worlds biggest world and the wotld is round that I know AN D THE WORLD IS THE GREATEST PLACE WE CAN EVER LIVE AS IT IS SO BIG THAT it is bigger that the mars hahaha jk ok btw elon musk has even more money and I am typing to just type something and make things work cuz I needs to earn hack club tickets and I 've already completed all the work and there is only a lit bit of thinmgs left in this website andI working on it i do not know what to do'
+  // ── Terminal commands ──
   const COMMANDS = {
     help: () => {
       tLog("── Navigation ──────────────────", "info");
-      tLog("  <b>projects</b>           switch to Projects", "info");
-      tLog("  <b>achievements</b>       switch to Achievements", "info");
       tLog("  <b>about</b>              open About Me", "info");
       tLog("── Links ───────────────────────", "info");
       tLog("  <b>github</b>             open my GitHub", "info");
@@ -1081,17 +714,14 @@
       tLog("── Utility ─────────────────────", "info");
       tLog("  <b>clear</b>              clear terminal", "info");
     },
-    projects:     () => { setMode("projects");     tLog("Switched to Projects ✓", "ok"); },
-    achievements: () => { setMode("achievements"); tLog("Switched to Achievements ✓", "ok"); },
-    about:        () => { aboutModal.style.display = "block"; tLog("Opening About Me…", "ok"); },
-    github:       () => { openURL("https://github.com/siddharthan-pradeep07"); tLog("Opening GitHub…", "ok"); },
-    linkedin:     () => { openURL("https://www.linkedin.com/in/siddharthan-pradeep-0202342a5/"); tLog("Opening LinkedIn…", "ok"); },
-    youtube:      () => { openURL("https://youtube.com/@siddharthan.pradeep"); tLog("Opening YouTube…", "ok"); },
-    siddhus_science_explorer:      () => { openURL("https://youtube.com/@siddharthan.pradeep"); tLog("Opening YouTube…", "ok"); },
-    printly:      () => { openURL("https://siddharthansp07.wixsite.com/createsometech"); tLog("Opening Printly 3D…", "ok"); },
-    bytesai:      () => { openURL("https://siddharthan-pradeep07.github.io/Bytes/"); tLog("Opening Bytes AI…", "ok"); },
-    book:         () => { openURL("https://www.bribooks.com/bookstore/the-genesis-of-robotics"); tLog("Opening book page…", "ok"); },
-    email:        () => { openEmailGame(); tLog("Starting email unlock game…", "warn"); },
+    about:   () => { aboutModal.style.display = "block"; tLog("Opening About Me…", "ok"); },
+    github:  () => { openURL("https://github.com/siddharthan-pradeep07"); tLog("Opening GitHub…", "ok"); },
+    linkedin:() => { openURL("https://www.linkedin.com/in/siddharthan-pradeep-0202342a5/"); tLog("Opening LinkedIn…", "ok"); },
+    youtube: () => { openURL("https://youtube.com/@siddharthan.pradeep"); tLog("Opening YouTube…", "ok"); },
+    printly: () => { openURL("https://siddharthansp07.wixsite.com/createsometech"); tLog("Opening Printly 3D…", "ok"); },
+    bytesai: () => { openURL("https://siddharthan-pradeep07.github.io/Bytes/"); tLog("Opening Bytes AI…", "ok"); },
+    book:    () => { openURL("https://www.bribooks.com/bookstore/the-genesis-of-robotics"); tLog("Opening book page…", "ok"); },
+    email:   () => { openEmailGame(); tLog("Starting email unlock game…", "warn"); },
     list: () => {
       tLog("── Projects ────────────────────", "info");
       allCards.forEach(c => tLog("  · " + c.dataset.name, "info"));
@@ -1117,7 +747,7 @@
       const m = allCards.find(c => c.dataset.name === query) ||
                 allCards.find(c => c.dataset.name.includes(query)) ||
                 allCards.find(c => query.split(" ").some(w => w.length > 2 && c.dataset.name.includes(w)));
-      if (m) { setMode("projects"); openProjectOverlay(m); tLog("Opened <b>" + m.dataset.name + "</b> ✓", "ok"); }
+      if (m) { openProjectOverlay(m); tLog("Opened <b>" + m.dataset.name + "</b> ✓", "ok"); }
       else tLog('Not found: "' + query + '". Try <b>list</b>.', "err");
       return;
     }
@@ -1125,9 +755,9 @@
     const m = allCards.find(c => c.dataset.name === cmd) ||
               allCards.find(c => c.dataset.name.includes(cmd)) ||
               allCards.find(c => cmd.split(" ").some(w => w.length > 2 && c.dataset.name.includes(w)));
-    if (m) { setMode("projects"); openProjectOverlay(m); tLog("Opened <b>" + m.dataset.name + "</b> ✓", "ok"); return; }
+    if (m) { openProjectOverlay(m); tLog("Opened <b>" + m.dataset.name + "</b> ✓", "ok"); return; }
 
-    tLog('Wdym? wth is this --> "' + raw + '" type a valid command or type <b>help</b>.', "err");
+    tLog('Unknown: "' + raw + '". Type <b>help</b>.', "err");
   });
   </script>
 </body>
